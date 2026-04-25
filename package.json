@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "start": "node scripts/resend-webhook-server.mjs",
     "newsletter:dry": "node scripts/send-newsletter.mjs --file index.html --dry-run",
     "newsletter:send": "node scripts/send-newsletter.mjs --file index.html --confirm",
     "newsletter:tracking:setup": "node scripts/setup-resend-tracking.mjs",
