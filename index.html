@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Charlie · Pappers MCP · Hebdo</title>
+  <style>
+    body, table, td, p, a, span { font-family: 'DM Sans', Arial, sans-serif; }
+    body { margin: 0; padding: 0; background: #E8E1D7; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table { border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    td { border-collapse: collapse; }
+    img { border: 0; display: block; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+
+    .container { width: 100%; max-width: 580px; background: #F7F3EC; border: 1px solid #CEC3B3; }
+
+    .section-paper { background: #FFFEFB; }
+    .section-soft { background: #F7F3EC; }
+    .section-note { background: #F2EDE5; }
+
+    .pad-x { padding-left: 36px; padding-right: 36px; }
+    .pad-hook { padding-top: 42px; padding-bottom: 36px; }
+    .pad-note { padding-top: 20px; padding-bottom: 22px; }
+    .pad-section { padding-top: 34px; padding-bottom: 36px; }
+    .pad-prompt { padding-top: 0; padding-bottom: 36px; }
+    .pad-output { padding-top: 34px; padding-bottom: 36px; }
+    .pad-closing { padding-top: 40px; padding-bottom: 44px; }
+    .pad-footer { padding: 16px 24px; }
+
+    .kicker {
+      font-size: 10px;
+      line-height: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #0E7A8A;
+      margin: 0 0 16px 0;
+    }
+
+    .title {
+      margin: 0 0 16px 0;
+      font-size: 32px;
+      line-height: 1.24;
+      font-weight: 700;
+      color: #0D0B08;
+      letter-spacing: -0.2px;
+    }
+
+    .body-text {
+      margin: 0;
+      font-size: 15.5px;
+      line-height: 1.74;
+      color: #3C3830;
+    }
+
+    .body-gap { margin-top: 14px; }
+    .proof {
+      margin: 14px 0 0 0;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #0E7A8A;
+      font-weight: 600;
+    }
+
+    .note-box {
+      border-left: 3px solid #0E7A8A;
+      padding-left: 16px;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #4A4238;
+    }
+
+    .sources {
+      display: block;
+      margin-top: 5px;
+      font-family: Consolas, 'Courier New', monospace;
+      font-size: 10px;
+      line-height: 1.4;
+      color: #8A7E74;
+      letter-spacing: 0.3px;
+    }
+
+    .label {
+      font-size: 10px;
+      line-height: 12px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #0E7A8A;
+      margin: 0 0 10px 0;
+    }
+
+    .section-title {
+      margin: 0 0 12px 0;
+      font-size: 22px;
+      line-height: 1.25;
+      font-weight: 700;
+      color: #0D0B08;
+      letter-spacing: -0.1px;
+    }
+
+    .section-text {
+      margin: 0;
+      font-size: 14.5px;
+      line-height: 1.72;
+      color: #3C3830;
+    }
+
+    .connect-box {
+      margin-top: 18px;
+      border: 1px solid #DAD1C5;
+      border-left: 3px solid #0E7A8A;
+      background: #F7F3EC;
+    }
+
+    .connect-td {
+      padding: 14px 18px;
+      font-size: 13px;
+      line-height: 1.58;
+      color: #3C3830;
+    }
+
+    .connect-line { margin: 0; }
+    .connect-line + .connect-line { margin-top: 9px; }
+
+    .code {
+      background: #E4F1F4;
+      color: #0A5060;
+      font-family: Consolas, 'Courier New', monospace;
+      font-size: 10.5px;
+      font-weight: 500;
+      padding: 2px 6px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    .step-row + .step-row td { padding-top: 20px; }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      font-size: 12px;
+      line-height: 28px;
+      font-weight: 700;
+      text-align: center;
+      color: #F7F3EC;
+      background: #0D0B08;
+      border-radius: 14px;
+    }
+
+    .step-title {
+      margin: 0 0 4px 0;
+      font-size: 15px;
+      line-height: 1.35;
+      font-weight: 600;
+      color: #0D0B08;
+    }
+
+    .step-text {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.64;
+      color: #6A6055;
+    }
+
+    .prompt-card {
+      border: 1px solid #1E1A15;
+      background: #100E0B;
+    }
+
+    .prompt-header {
+      border-bottom: 1px solid #24201A;
+      padding: 12px 20px;
+    }
+
+    .prompt-label {
+      font-family: Consolas, 'Courier New', monospace;
+      font-size: 10px;
+      line-height: 1.4;
+      font-weight: 500;
+      color: #9A8F83;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .prompt-hint {
+      margin-top: 4px;
+      font-size: 10px;
+      line-height: 1.4;
+      color: #7A7066;
+    }
+
+    .prompt-body {
+      padding: 20px 20px 22px;
+      font-family: Consolas, 'Courier New', monospace;
+      font-size: 12px;
+      line-height: 1.85;
+      color: #C3B8A9;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .hl { color: #4BBDCE; font-weight: 500; }
+    .dim { color: #8F8375; font-style: italic; }
+
+    .output-card {
+      border: 1px solid #DAD1C5;
+      background: #FFFEFB;
+    }
+
+    .output-row + .output-row td { border-top: 1px solid #EDE6DC; }
+
+    .output-cell {
+      padding: 16px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin: 0 0 9px 0;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 8.5px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .badge-r { background: #FDECEA; color: #7A1818; }
+    .badge-o { background: #FEF3C7; color: #7A4200; }
+    .badge-g { background: #E2F5E8; color: #1A5228; }
+
+    .out-name {
+      margin: 0 0 2px 0;
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 600;
+      color: #0D0B08;
+    }
+
+    .out-siren {
+      margin: 0 0 7px 0;
+      font-family: Consolas, 'Courier New', monospace;
+      font-size: 9.5px;
+      line-height: 1.4;
+      color: #A09080;
+      letter-spacing: 0.2px;
+    }
+
+    .out-detail {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.58;
+      color: #544C44;
+    }
+
+    .out-source {
+      margin: 5px 0 0 0;
+      font-family: Consolas, 'Courier New', monospace;
+      font-size: 9px;
+      line-height: 1.4;
+      color: #A09080;
+      letter-spacing: 0.2px;
+    }
+
+    .out-action {
+      margin: 8px 0 0 0;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #0E7A8A;
+      font-weight: 500;
+    }
+
+    .closing-text {
+      margin: 0 0 20px 0;
+      font-size: 22px;
+      line-height: 1.3;
+      font-weight: 700;
+      color: #0D0B08;
+      letter-spacing: -0.2px;
+    }
+
+    .closing-text em {
+      color: #0E7A8A;
+      font-style: italic;
+    }
+
+    .cta-wrap {
+      margin: 14px 0 0 0;
+    }
+
+    .cta-link {
+      display: block;
+      text-align: center;
+      background: #0E7A8A;
+      color: #FFFFFF !important;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+      padding: 13px 16px;
+      border-radius: 10px;
+    }
+
+    .footer {
+      background: #EDE6DC;
+      border-top: 1px solid #D0C4B4;
+    }
+
+    .footer-text {
+      margin: 0;
+      font-size: 10.5px;
+      line-height: 1.8;
+      text-align: center;
+      color: #A09080;
+    }
+
+    .footer-text a {
+      color: #7A6E64;
+      text-decoration: underline;
+      text-decoration-color: #B9AFA4;
+      text-underline-offset: 2px;
+    }
+
+    @media only screen and (max-width: 620px) {
+      .container { border-left: 0 !important; border-right: 0 !important; }
+      .pad-x { padding-left: 22px !important; padding-right: 22px !important; }
+      .pad-hook { padding-top: 32px !important; padding-bottom: 28px !important; }
+      .pad-section { padding-top: 28px !important; padding-bottom: 30px !important; }
+      .pad-prompt { padding-bottom: 30px !important; }
+      .pad-output { padding-top: 28px !important; padding-bottom: 30px !important; }
+      .pad-closing { padding-top: 34px !important; padding-bottom: 38px !important; }
+      .title { font-size: 24px !important; line-height: 1.28 !important; }
+      .closing-text { font-size: 18px !important; line-height: 1.34 !important; }
+      .output-cell { padding: 14px !important; }
+      .pad-footer { padding-left: 22px !important; padding-right: 22px !important; }
+    }
+  </style>
+</head>
+<body>
+  <table role="presentation" width="100%" bgcolor="#E8E1D7">
+    <tr>
+      <td align="center" style="padding: 48px 16px;">
+        <!--[if mso]>
+        <table role="presentation" width="580" align="center" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td>
+        <![endif]-->
+        <table role="presentation" class="container" width="100%" style="max-width:580px;">
+          <tr>
+            <td style="background:#0D3558; border-bottom:1px solid #1F4D71;">
+              <img src="./banner-charlie-linkedin.jpg" width="578" alt="Charlie - bannière hebdomadaire" style="width:100%; max-width:578px; height:auto;">
+            </td>
+          </tr>
+
+          <tr>
+            <td class="section-paper pad-x pad-hook" style="border-bottom:1px solid #E6DDD2;">
+              <p class="kicker">Édition hebdomadaire</p>
+              <p class="title">Repérez les dossiers à risque avant qu’ils ne deviennent urgents.</p>
+              <p class="body-text"><strong>Pappers MCP</strong> vous aide à détecter les dossiers sensibles avant qu'ils n'escaladent, puis à les classer par urgence. Chaque semaine, il remonte les signaux clés et priorise vos dossiers par niveau de risque.</p>
+              <p class="proof">Objectif : appeler les bons clients, dans le bon ordre, avant le prochain rendez-vous.</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="section-note pad-x pad-note" style="border-bottom:1px solid #E0D5C8;">
+              <p class="note-box"><strong>Pappers MCP</strong> - connecteur officiel, certifié et daté. Chaque résultat est sourcé, horodaté et exploitable en rendez-vous client ou en comité de suivi.<span class="sources">INPI · BODACC · INSEE · DVF · Kbis · RCS</span></p>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="section-paper pad-x pad-section" style="border-bottom:1px solid #E6DDD2;">
+              <p class="label">Connexion · 2 min</p>
+              <p class="section-title">Connecter Pappers à Claude</p>
+              <p class="section-text">Créez un compte sur <strong>pappers.fr</strong> (essai gratuit 14 jours), récupérez votre clé API.</p>
+
+              <table role="presentation" width="100%" class="connect-box" style="margin-top:18px;">
+                <tr>
+                  <td class="connect-td">
+                    <p class="connect-line">→ Claude : <strong>Settings → Connectors → Add custom connector</strong></p>
+                    <p class="connect-line">→ Nom : <span class="code">Pappers</span> &nbsp;·&nbsp; URL : <span class="code">https://mcp.pappers.fr/VOTRE_CLE</span></p>
+                    <p class="connect-line">→ Dans vos prompts, écrivez <strong>"via Pappers"</strong> : accès direct aux registres publics</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="section-soft pad-x pad-section" style="border-bottom:1px solid #E6DDD2;">
+              <p class="label">Routine · 3 étapes</p>
+              <table role="presentation" width="100%" style="margin-top:8px;">
+                <tr class="step-row">
+                  <td width="42" valign="top"><p class="step-num">1</p></td>
+                  <td valign="top">
+                    <p class="step-title">Constituez votre liste une seule fois</p>
+                    <p class="step-text">Nom + SIREN + client associé (20 à 50 lignes). Stockez-la dans un <strong>Claude Project</strong> pour la réutiliser chaque semaine.</p>
+                  </td>
+                </tr>
+                <tr class="step-row">
+                  <td width="42" valign="top"><p class="step-num">2</p></td>
+                  <td valign="top">
+                    <p class="step-title">Lancez la passe chaque semaine</p>
+                    <p class="step-text">Copiez-collez le prompt. Les signaux sont triés automatiquement par niveau d'urgence.</p>
+                  </td>
+                </tr>
+                <tr class="step-row">
+                  <td width="42" valign="top"><p class="step-num">3</p></td>
+                  <td valign="top">
+                    <p class="step-title">Appelez les bons clients en priorité</p>
+                    <p class="step-text">Traitez les dossiers rouges en premier. Le rapport est <strong>exportable au dossier KYC</strong> avec source, date et action proposée.</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="section-soft pad-x pad-prompt" style="border-bottom:1px solid #E6DDD2;">
+              <table role="presentation" width="100%" class="prompt-card">
+                <tr>
+                  <td class="prompt-header">
+                    <p class="prompt-label">Prompt · à copier</p>
+                    <p class="prompt-hint">Claude + Pappers MCP</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="prompt-body"><span class="hl">Via Pappers</span>, analyse ces entités :
+
+<span class="dim">[Entreprise A · SIREN 123456789 · Client Martin]
+[Holding Dupont · SIREN 987654321 · Client Dupont]</span>
+
+Pour chaque entité, vérifie :
+<span class="hl">1.</span> Procédure collective en cours
+<span class="hl">2.</span> Publications BODACC sur 12 mois
+<span class="hl">3.</span> Changement dirigeant ou bénéficiaire
+<span class="hl">4.</span> Bilan annuel non déposé / retard
+<span class="hl">5.</span> Statut : VERT / ORANGE / ROUGE + action immédiate
+
+Retour attendu : tableau synthèse + top 5 urgences de la semaine, avec source, date et action.</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="section-paper pad-x pad-output" style="border-bottom:1px solid #E6DDD2;">
+              <p class="label" style="color:#A09080;">Ce que vous décidez en une lecture</p>
+              <table role="presentation" width="100%" class="output-card">
+                <tr class="output-row">
+                  <td class="output-cell">
+                    <span class="badge badge-r">Rouge</span>
+                    <p class="out-name">Holding Dupont</p>
+                    <p class="out-siren">SIREN 987654321</p>
+                    <p class="out-detail">Nantissement fonds de commerce (14/04). Bilan 2024 non déposé, retard 3 mois. Deux signaux croisés.</p>
+                    <p class="out-source">BODACC · INPI · RCS</p>
+                    <p class="out-action">→ Appel urgent : liquidités et garanties à vérifier</p>
+                  </td>
+                </tr>
+                <tr class="output-row">
+                  <td class="output-cell">
+                    <span class="badge badge-o">Orange</span>
+                    <p class="out-name">SAS Martin Immobilier</p>
+                    <p class="out-siren">SIREN 123456789</p>
+                    <p class="out-detail">Nouveau dirigeant associé depuis le 02/04 (cession 80%). Modification non signalée lors du dernier RDV.</p>
+                    <p class="out-source">INPI · INSEE</p>
+                    <p class="out-action">→ Point client obligatoire : mise à jour dossier KYC</p>
+                  </td>
+                </tr>
+                <tr class="output-row">
+                  <td class="output-cell">
+                    <span class="badge badge-g">Vert</span>
+                    <p class="out-name">SCI Les Acacias</p>
+                    <p class="out-siren">SIREN 456789123</p>
+                    <p class="out-detail">RCS à jour. Bilan 2024 déposé le 05/03. Aucune publication BODACC sur 12 mois.</p>
+                    <p class="out-source">INPI · BODACC</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="section-paper pad-x pad-closing">
+              <p class="closing-text">50 clients. Chaque semaine. 10&nbsp;minutes.<br><em>Moins de risques, plus de décisions utiles.</em></p>
+              <p class="cta-wrap">
+                <a class="cta-link" href="https://calendly.com/thomas-financee/30min">Réserver un call démo de 30 min</a>
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="footer pad-footer">
+              <p class="footer-text">
+                Vous recevez cet email car vous avez demandé des ressources sur la veille client.<br>
+                <a href="mailto:contact@charliefinancialadvisor.com?subject=Désabonnement%20newsletter">Se désabonner</a>
+                &nbsp;·&nbsp;
+                <a href="https://www.charliefinancialadvisor.com/newsletter">Voir en ligne</a>
+                &nbsp;·&nbsp;
+                <a href="https://www.charliefinancialadvisor.com">charliefinancialadvisor.com</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <!--[if mso]>
+            </td>
+          </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

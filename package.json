@@ -1,0 +1,19 @@
+{
+  "name": "charlie-newsletter",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "newsletter:dry": "node scripts/send-newsletter.mjs --file index.html --dry-run",
+    "newsletter:send": "node scripts/send-newsletter.mjs --file index.html --confirm",
+    "newsletter:tracking:setup": "node scripts/setup-resend-tracking.mjs",
+    "newsletter:webhook:setup": "node scripts/setup-resend-webhook.mjs",
+    "newsletter:webhook:serve": "node scripts/resend-webhook-server.mjs",
+    "newsletter:metrics": "node scripts/newsletter-metrics.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.8",
+    "dotenv": "^16.6.1",
+    "resend": "^4.8.0",
+    "svix": "^1.60.0"
+  }
+}
