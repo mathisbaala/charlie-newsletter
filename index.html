@@ -334,6 +334,17 @@
       .closing-text { font-size: 18px !important; line-height: 1.34 !important; }
       .output-cell { padding: 14px !important; }
       .pad-footer { padding-left: 22px !important; padding-right: 22px !important; }
+      .code {
+        display: inline-block !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+      }
+      .footer-text a {
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+      }
     }
   </style>
 </head>
@@ -356,30 +367,30 @@
           <tr>
             <td class="section-paper pad-x pad-hook" style="border-bottom:1px solid #E6DDD2;">
               <p class="kicker">Édition hebdomadaire</p>
-              <p class="title">Banquiers privés et CGP, repérez vos dossiers à risque avant qu'ils ne deviennent urgents.</p>
-              <p class="body-text"><strong>Pappers MCP</strong> vous aide à détecter les dossiers sensibles avant qu'ils n'escaladent, puis à les classer par urgence. Chaque semaine, il remonte les signaux clés et priorise vos dossiers par niveau de risque.</p>
-              <p class="proof">Objectif : appeler les bons clients, dans le bon ordre, avant le prochain rendez-vous.</p>
+              <p class="title">Banquiers privés et CGP, repérez vos dossiers à risque avant qu'ils ne deviennent&nbsp;urgents.</p>
+              <p class="body-text"><strong>Pappers MCP</strong> vous aide à détecter les dossiers sensibles avant qu'ils n'escaladent, puis à les classer par urgence. Chaque semaine, il remonte les signaux clés et priorise vos dossiers par niveau de&nbsp;risque.</p>
+              <p class="proof">Objectif : appeler les bons clients, dans le bon ordre, avant le prochain&nbsp;rendez-vous.</p>
             </td>
           </tr>
 
           <tr>
             <td class="section-note pad-x pad-note" style="border-bottom:1px solid #E0D5C8;">
-              <p class="note-box"><strong>Pappers MCP</strong> - connecteur officiel, certifié et daté. Chaque résultat est sourcé, horodaté et exploitable en rendez-vous client ou en comité de suivi.<span class="sources">INPI · BODACC · INSEE · DVF · Kbis · RCS</span></p>
+              <p class="note-box"><strong>Pappers MCP</strong> - connecteur officiel, certifié et daté. Chaque résultat est sourcé, horodaté et exploitable en rendez-vous client ou en comité de&nbsp;suivi.<span class="sources">INPI · BODACC · INSEE · DVF · Kbis · RCS</span></p>
             </td>
           </tr>
 
           <tr>
             <td class="section-paper pad-x pad-section" style="border-bottom:1px solid #E6DDD2;">
               <p class="label">Connexion · 2 min</p>
-              <p class="section-title">Connecter Pappers à Claude</p>
-              <p class="section-text">Créez un compte sur <strong>pappers.fr</strong> (essai gratuit 14 jours), récupérez votre clé API.</p>
+              <p class="section-title">Connecter Pappers à&nbsp;Claude</p>
+              <p class="section-text">Créez un compte sur <strong>pappers.fr</strong> (essai gratuit 14 jours), récupérez votre clé&nbsp;API.</p>
 
               <table role="presentation" width="100%" class="connect-box" style="margin-top:18px;">
                 <tr>
                   <td class="connect-td">
-                    <p class="connect-line">→ Claude : <strong>Settings → Connectors → Add custom connector</strong></p>
+                    <p class="connect-line">→ Claude : <strong>Settings → Connectors → Add custom&nbsp;connector</strong></p>
                     <p class="connect-line">→ Nom : <span class="code">Pappers</span> &nbsp;·&nbsp; URL : <span class="code">https://mcp.pappers.fr/VOTRE_CLE</span></p>
-                    <p class="connect-line">→ Dans vos prompts, écrivez <strong>"via Pappers"</strong> : accès direct aux registres publics</p>
+                    <p class="connect-line">→ Dans vos prompts, écrivez <strong>"via Pappers"</strong> : accès direct aux registres&nbsp;publics</p>
                   </td>
                 </tr>
               </table>
@@ -393,22 +404,22 @@
                 <tr class="step-row">
                   <td width="42" valign="top"><p class="step-num">1</p></td>
                   <td valign="top">
-                    <p class="step-title">Constituez votre liste une seule fois</p>
-                    <p class="step-text">Nom + SIREN + client associé (20 à 50 lignes). Stockez-la dans un <strong>Claude Project</strong> pour la réutiliser chaque semaine.</p>
+                    <p class="step-title">Constituez votre liste une seule&nbsp;fois</p>
+                    <p class="step-text">Nom + SIREN + client associé (20 à 50 lignes). Stockez-la dans un <strong>Claude Project</strong> pour la réutiliser chaque&nbsp;semaine.</p>
                   </td>
                 </tr>
                 <tr class="step-row">
                   <td width="42" valign="top"><p class="step-num">2</p></td>
                   <td valign="top">
-                    <p class="step-title">Le process</p>
-                    <p class="step-text">Copiez-collez le prompt. Les signaux sont triés automatiquement par niveau d'urgence.</p>
+                    <p class="step-title">Lancez la routine chaque&nbsp;semaine</p>
+                    <p class="step-text">Copiez-collez le prompt. Les signaux sont triés automatiquement par niveau&nbsp;d'urgence.</p>
                   </td>
                 </tr>
                 <tr class="step-row">
                   <td width="42" valign="top"><p class="step-num">3</p></td>
                   <td valign="top">
-                    <p class="step-title">Appelez les bons clients en priorité</p>
-                    <p class="step-text">Traitez les dossiers rouges en premier. Le rapport est <strong>exportable au dossier KYC</strong> avec source, date et action proposée.</p>
+                    <p class="step-title">Appelez les bons clients en&nbsp;priorité</p>
+                    <p class="step-text">Traitez les dossiers rouges en premier. Le rapport est <strong>exportable au dossier KYC</strong> avec source, date et action&nbsp;proposée.</p>
                   </td>
                 </tr>
               </table>
@@ -437,7 +448,7 @@ Pour chaque entité, vérifie :
 <span class="hl">4.</span> Bilan annuel non déposé / retard
 <span class="hl">5.</span> Statut : VERT / ORANGE / ROUGE + action immédiate
 
-Retour attendu : tableau synthèse + top 5 urgences de la semaine, avec source, date et action.</td>
+Retour attendu : tableau synthèse + top 5 urgences de la semaine, avec source, date et&nbsp;action.</td>
                 </tr>
               </table>
             </td>
@@ -445,16 +456,16 @@ Retour attendu : tableau synthèse + top 5 urgences de la semaine, avec source, 
 
           <tr>
             <td class="section-paper pad-x pad-output" style="border-bottom:1px solid #E6DDD2;">
-              <p class="label" style="color:#A09080;">Ce que vous décidez en une lecture</p>
+              <p class="label" style="color:#A09080;">Ce que vous décidez en une&nbsp;lecture</p>
               <table role="presentation" width="100%" class="output-card">
                 <tr class="output-row">
                   <td class="output-cell">
                     <span class="badge badge-r">Rouge</span>
                     <p class="out-name">Holding Dupont</p>
                     <p class="out-siren">SIREN 987654321</p>
-                    <p class="out-detail">Nantissement fonds de commerce (14/04). Bilan 2024 non déposé, retard 3 mois. Deux signaux croisés.</p>
+                    <p class="out-detail">Nantissement fonds de commerce (14/04). Bilan 2024 non déposé, retard 3 mois. Deux signaux&nbsp;croisés.</p>
                     <p class="out-source">BODACC · INPI · RCS</p>
-                    <p class="out-action">→ Appel urgent : liquidités et garanties à vérifier</p>
+                    <p class="out-action">→ Appel urgent : liquidités et garanties à&nbsp;vérifier</p>
                   </td>
                 </tr>
                 <tr class="output-row">
@@ -462,9 +473,9 @@ Retour attendu : tableau synthèse + top 5 urgences de la semaine, avec source, 
                     <span class="badge badge-o">Orange</span>
                     <p class="out-name">SAS Martin Immobilier</p>
                     <p class="out-siren">SIREN 123456789</p>
-                    <p class="out-detail">Nouveau dirigeant associé depuis le 02/04 (cession 80%). Modification non signalée lors du dernier RDV.</p>
+                    <p class="out-detail">Nouveau dirigeant associé depuis le 02/04 (cession 80%). Modification non signalée lors du dernier&nbsp;RDV.</p>
                     <p class="out-source">INPI · INSEE</p>
-                    <p class="out-action">→ Point client obligatoire : mise à jour dossier KYC</p>
+                    <p class="out-action">→ Point client obligatoire : mise à jour dossier&nbsp;KYC</p>
                   </td>
                 </tr>
                 <tr class="output-row">
@@ -472,7 +483,7 @@ Retour attendu : tableau synthèse + top 5 urgences de la semaine, avec source, 
                     <span class="badge badge-g">Vert</span>
                     <p class="out-name">SCI Les Acacias</p>
                     <p class="out-siren">SIREN 456789123</p>
-                    <p class="out-detail">RCS à jour. Bilan 2024 déposé le 05/03. Aucune publication BODACC sur 12 mois.</p>
+                    <p class="out-detail">RCS à jour. Bilan 2024 déposé le 05/03. Aucune publication BODACC sur 12&nbsp;mois.</p>
                     <p class="out-source">INPI · BODACC</p>
                   </td>
                 </tr>
@@ -482,9 +493,9 @@ Retour attendu : tableau synthèse + top 5 urgences de la semaine, avec source, 
 
           <tr>
             <td class="section-paper pad-x pad-closing">
-              <p class="closing-text">50 clients. Chaque semaine. 10&nbsp;minutes.<br><em>Moins de risques, plus de décisions utiles.</em></p>
+              <p class="closing-text">50 clients. Chaque semaine. 10&nbsp;minutes.<br><em>Moins de risques, plus de décisions&nbsp;utiles.</em></p>
               <p class="cta-wrap">
-                <a class="cta-link" href="https://calendly.com/thomas-financee/30min">Réserver un call démo de 30 min</a>
+                <a class="cta-link" href="https://calendly.com/thomas-financee/30min">Réserver un call démo de 30&nbsp;min</a>
               </p>
             </td>
           </tr>
@@ -492,7 +503,7 @@ Retour attendu : tableau synthèse + top 5 urgences de la semaine, avec source, 
           <tr>
             <td class="footer pad-footer">
               <p class="footer-text">
-                Vous recevez cet email car vous avez demandé des ressources sur la veille client.<br>
+                Vous recevez cet email car vous avez demandé des ressources sur la veille&nbsp;client.<br>
                 <a href="mailto:contact@charliefinancialadvisor.com?subject=Désabonnement%20newsletter">Se désabonner</a>
                 &nbsp;·&nbsp;
                 <a href="https://www.charliefinancialadvisor.com/newsletter">Voir en ligne</a>
