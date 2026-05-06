@@ -369,14 +369,14 @@ async function main() {
   const fromEmail = assertEnv('FROM_EMAIL');
   const replyToEmail = process.env.REPLY_TO_EMAIL || 'baala.mathis@gmail.com';
 
-  const table = process.env.NEWSLETTER_SUBSCRIBERS_TABLE || 'leads';
-  const emailColumn = process.env.NEWSLETTER_EMAIL_COLUMN || 'email';
-  const firstNameColumn = process.env.NEWSLETTER_FIRST_NAME_COLUMN || 'first_name';
+  const table = 'leads';
+  const emailColumn = 'email';
+  const firstNameColumn = 'first_name';
   const firstNameFallback = process.env.NEWSLETTER_FIRST_NAME_FALLBACK || '';
   const unsubscribeSecret = process.env.UNSUBSCRIBE_SECRET || '';
   const unsubscribeBaseUrl = (process.env.UNSUBSCRIBE_BASE_URL || '').replace(/\/+$/, '');
-  const optInColumn = process.env.NEWSLETTER_OPT_IN_COLUMN || 'newsletter_opt_in';
-  const unsubscribedAtColumn = process.env.NEWSLETTER_UNSUBSCRIBED_AT_COLUMN || 'unsubscribed_at';
+  const optInColumn = 'newsletter_opt_in';
+  const unsubscribedAtColumn = 'unsubscribed_at';
   const publicAssetsBaseUrl = process.env.NEWSLETTER_PUBLIC_ASSETS_BASE_URL || '';
   const streamTag = sanitizeTagValue(process.env.NEWSLETTER_STREAM_TAG || 'charlie_newsletter');
   const campaignTag = sanitizeTagValue(args.campaign || args.subject);

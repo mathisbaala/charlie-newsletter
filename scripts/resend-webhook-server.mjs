@@ -84,10 +84,10 @@ const port = Number(process.env.NEWSLETTER_WEBHOOK_PORT || process.env.PORT || 8
 const webhookPath = process.env.NEWSLETTER_WEBHOOK_PATH || '/webhooks/resend';
 
 const unsubscribeSecret = process.env.UNSUBSCRIBE_SECRET || '';
-const subscribersTable = process.env.NEWSLETTER_SUBSCRIBERS_TABLE || 'leads';
-const emailColumn = process.env.NEWSLETTER_EMAIL_COLUMN || 'email';
-const optInColumn = process.env.NEWSLETTER_OPT_IN_COLUMN || 'newsletter_opt_in';
-const unsubscribedAtColumn = process.env.NEWSLETTER_UNSUBSCRIBED_AT_COLUMN || 'unsubscribed_at';
+const subscribersTable = 'leads';
+const emailColumn = 'email';
+const optInColumn = 'newsletter_opt_in';
+const unsubscribedAtColumn = 'unsubscribed_at';
 
 function generateUnsubscribeToken(email) {
   return crypto.createHmac('sha256', unsubscribeSecret).update(email).digest('hex');

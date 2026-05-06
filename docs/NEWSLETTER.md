@@ -16,12 +16,15 @@ Renseigne ensuite les variables dans `.env`.
 Dans l'éditeur SQL Supabase, exécute:
 
 - `docs/newsletter-metrics.sql`
+- `docs/newsletter-subscribers.sql`
+- `docs/drop-newsletter-subscribers.sql` (une fois `leads` vérifiée)
 
-Ce script crée:
+Ces scripts créent:
 
 - `public.newsletter_events` (table brute des événements webhook)
 - `public.newsletter_campaign_metrics` (KPI par campagne)
 - `public.newsletter_campaign_link_metrics` (top liens cliqués)
+- `public.leads` (table abonnés/prospects utilisée par les scripts)
 
 ### 2.2 Tracking domaine Resend
 
@@ -78,29 +81,28 @@ Le script retourne un `signing_secret`:
 
 ## 3) Préparer la table abonnés
 
-Le script d'envoi suppose ces colonnes:
+Le workflow (envoi + unsubscribe) est maintenant fixé sur `public.leads`:
 
-- table `public.members` (ou override via env)
+- table `public.leads`
 - `email` (text)
+- `first_name` (text)
 - `newsletter_opt_in` (boolean)
 - `unsubscribed_at` (timestamptz)
 
-SQL rapide:
+SQL recommandé:
 
 ```sql
-alter table public.members
-add column if not exists newsletter_opt_in boolean default false;
-
-alter table public.members
-add column if not exists unsubscribed_at timestamptz;
+-- crée/normalise la table leads :
+-- docs/newsletter-subscribers.sql
 ```
 
-Si ta table/colonnes ont d'autres noms, ajuste dans `.env`:
+Ce script normalise le schéma de `leads` et garantit les contraintes utilisées par les scripts.
+Ensuite supprime la table obsolète:
 
-- `NEWSLETTER_SUBSCRIBERS_TABLE`
-- `NEWSLETTER_EMAIL_COLUMN`
-- `NEWSLETTER_OPT_IN_COLUMN`
-- `NEWSLETTER_UNSUBSCRIBED_AT_COLUMN`
+```sql
+-- supprime newsletter_subscribers :
+-- docs/drop-newsletter-subscribers.sql
+```
 
 ## 4) Workflow hebdo d'envoi
 
@@ -108,13 +110,13 @@ Si ta table/colonnes ont d'autres noms, ajuste dans `.env`:
 2. Prévisualise l'audience sans envoi:
 
 ```bash
-npm run newsletter:dry -- --subject "CHARLIE #15 · 4 mai 2026" --campaign "charlie_2026_05_04"
+npm run newsletter:dry -- --subject "Quelque chose vient de se passer chez un de vos clients. Vous ne le savez pas encore." --campaign "charlie_2026_05_11_data_gouv_pappers_mcp"
 ```
 
 3. Envoi global:
 
 ```bash
-npm run newsletter:send -- --subject "CHARLIE #15 · 4 mai 2026" --campaign "charlie_2026_05_04"
+npm run newsletter:send -- --subject "Quelque chose vient de se passer chez un de vos clients. Vous ne le savez pas encore." --campaign "charlie_2026_05_11_data_gouv_pappers_mcp"
 ```
 
 4. Envoi test sur une adresse (hors base abonnés):
@@ -122,8 +124,8 @@ npm run newsletter:send -- --subject "CHARLIE #15 · 4 mai 2026" --campaign "cha
 ```bash
 node scripts/send-newsletter.mjs \
   --file index.html \
-  --subject "CHARLIE #15 · 4 mai 2026 - test" \
-  --campaign "charlie_2026_05_04_test" \
+  --subject "Quelque chose vient de se passer chez un de vos clients. Vous ne le savez pas encore. - test" \
+  --campaign "charlie_2026_05_11_data_gouv_pappers_mcp_test" \
   --to "toi@domaine.com" \
   --confirm
 ```
@@ -149,7 +151,7 @@ npm run newsletter:metrics
 Une campagne précise + top liens:
 
 ```bash
-npm run newsletter:metrics -- --campaign "charlie_2026_05_04" --links
+npm run newsletter:metrics -- --campaign "charlie_2026_05_11_data_gouv_pappers_mcp" --links
 ```
 
 ### Dashboard/SQL Supabase
@@ -161,7 +163,7 @@ order by last_event_at desc;
 
 select *
 from public.newsletter_campaign_link_metrics
-where campaign = 'charlie_2026_05_04'
+where campaign = 'charlie_2026_05_11_data_gouv_pappers_mcp'
 order by unique_clicks desc;
 ```
 
