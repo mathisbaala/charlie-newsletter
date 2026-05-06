@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node scripts/resend-webhook-server.mjs",
     "newsletter:dry": "node scripts/send-newsletter.mjs --file index.html --dry-run",
+    "newsletter:dry:200": "node scripts/send-newsletter.mjs --file index.html --dry-run --resume-campaign --limit 200",
     "newsletter:send": "node scripts/send-newsletter.mjs --file index.html --confirm",
+    "newsletter:send:200": "node scripts/send-newsletter.mjs --file index.html --confirm --resume-campaign --limit 200",
     "newsletter:tracking:setup": "node scripts/setup-resend-tracking.mjs",
     "newsletter:webhook:setup": "node scripts/setup-resend-webhook.mjs",
     "newsletter:webhook:serve": "node scripts/resend-webhook-server.mjs",

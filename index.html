@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Charlie · Pappers MCP · Hebdo</title>
+  <title>Charlie · Data.gouv + Pappers MCP · Hebdo</title>
   <style>
     body, table, td, p, a, span { font-family: 'DM Sans', Arial, sans-serif; }
     body { margin: 0; padding: 0; background: #E8E1D7; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
@@ -322,6 +322,20 @@
       text-underline-offset: 2px;
     }
 
+    .footer-highlight {
+      display: block;
+      margin: 0 0 8px 0;
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 700;
+      color: #0D3558;
+    }
+
+    .footer-highlight a {
+      color: #0D3558;
+      text-decoration-color: #0D3558;
+    }
+
     @media only screen and (max-width: 620px) {
       .container { border-left: 0 !important; border-right: 0 !important; }
       .pad-x { padding-left: 22px !important; padding-right: 22px !important; }
@@ -364,149 +378,164 @@
             </td>
           </tr>
 
+          <!-- HOOK -->
           <tr>
             <td class="section-paper pad-x pad-hook" style="border-bottom:1px solid #E6DDD2;">
-              <p class="kicker">Édition hebdomadaire</p>
-              <p class="title">Banquiers privés et CGP, repérez vos dossiers à risque avant qu'ils ne deviennent&nbsp;urgents.</p>
-              <p class="body-text"><strong>Pappers MCP</strong> vous aide à détecter les dossiers sensibles avant qu'ils n'escaladent, puis à les classer par urgence. Chaque semaine, il remonte les signaux clés et priorise vos dossiers par niveau de&nbsp;risque.</p>
-              <p class="proof">Objectif : appeler les bons clients, dans le bon ordre, avant le prochain&nbsp;rendez-vous.</p>
+              <p class="kicker">Édition hebdomadaire · Lundi 11 mai 2026</p>
+              <p class="title">{{PRENOM}}, quelque chose vient de se passer chez un de vos clients. Vous ne le savez pas&nbsp;encore.</p>
+              <p class="body-text">Une cession publiée au BODACC. Une holding montée en 48 heures. Un capital restructuré silencieusement. Ces événements ont une fenêtre — 90 jours pour l'apport-cession, quelques semaines pour structurer le réinvestissement. Passé ce délai, les décisions sont prises sans&nbsp;vous.</p>
+              <p class="body-text body-gap"><strong>Data.gouv MCP + Pappers MCP</strong> connectent Claude aux bases officielles françaises. Chaque lundi matin, en 15 minutes, vous savez ce qui a changé chez vos clients — avant de les&nbsp;appeler.</p>
+              <p class="proof">Arriver à l'appel avec les faits. Pas avec une question&nbsp;ouverte.</p>
             </td>
           </tr>
 
+          <!-- NOTE -->
           <tr>
             <td class="section-note pad-x pad-note" style="border-bottom:1px solid #E0D5C8;">
-              <p class="note-box"><strong>Pappers MCP</strong> - connecteur officiel, certifié et daté. Chaque résultat est sourcé, horodaté et exploitable en rendez-vous client ou en comité de&nbsp;suivi.<span class="sources">INPI · BODACC · INSEE · DVF · Kbis · RCS</span></p>
+              <p class="note-box"><strong>Data.gouv MCP</strong> — le serveur officiel de l'État. SIRENE et BODACC en temps réel. Gratuit, sans clé API. <strong>Pappers MCP</strong> — bilans, dirigeants, bénéficiaires effectifs. Les données qui changent le niveau d'une&nbsp;conversation.<span class="sources">SIRENE · BODACC · Liasses fiscales · RCS · Bénéficiaires effectifs</span></p>
             </td>
           </tr>
 
+          <!-- CONNEXION -->
           <tr>
             <td class="section-paper pad-x pad-section" style="border-bottom:1px solid #E6DDD2;">
-              <p class="label">Connexion · 2 min</p>
-              <p class="section-title">Connecter Pappers à&nbsp;Claude</p>
-              <p class="section-text">Créez un compte sur <strong>pappers.fr</strong> (essai gratuit 14 jours), récupérez votre clé&nbsp;API.</p>
+              <p class="label">Connexion · 5 min</p>
+              <p class="section-title">Connecter les deux sources à&nbsp;Claude</p>
+              <p class="section-text">Deux connecteurs. Version web de Claude uniquement — les connecteurs personnalisés ne fonctionnent pas sur l'application&nbsp;desktop.</p>
 
               <table role="presentation" width="100%" class="connect-box" style="margin-top:18px;">
                 <tr>
                   <td class="connect-td">
-                    <p class="connect-line">→ Claude : <strong>Settings → Connectors → Add custom&nbsp;connector</strong></p>
-                    <p class="connect-line">→ Nom : <span class="code">Pappers</span> &nbsp;·&nbsp; URL : <span class="code">https://mcp.pappers.fr/VOTRE_CLE</span></p>
-                    <p class="connect-line">→ Dans vos prompts, écrivez <strong>"via Pappers"</strong> : accès direct aux registres&nbsp;publics</p>
+                    <p class="connect-line">→ Claude : <strong>Settings → Integrations → Add custom&nbsp;connector</strong></p>
+                    <p class="connect-line">→ Data.gouv (gratuit, sans clé) : <span class="code">https://mcp.data.gouv.fr/api/mcp</span></p>
+                    <p class="connect-line">→ Pappers (essai 14 jours sur pappers.fr) : <span class="code">https://mcp.pappers.fr/VOTRE_CLE_API</span></p>
+                    <p class="connect-line">→ Dans chaque prompt : <strong>"via Data.gouv"</strong> ou <strong>"via Pappers"</strong> — Claude interroge les bases en direct, pas sa&nbsp;mémoire</p>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
+          <!-- ROUTINE -->
           <tr>
             <td class="section-soft pad-x pad-section" style="border-bottom:1px solid #E6DDD2;">
-              <p class="label">Routine · 3 étapes</p>
+              <p class="label">Routine · 15 min par semaine</p>
               <table role="presentation" width="100%" style="margin-top:8px;">
                 <tr class="step-row">
                   <td width="42" valign="top"><p class="step-num">1</p></td>
                   <td valign="top">
                     <p class="step-title">Constituez votre liste une seule&nbsp;fois</p>
-                    <p class="step-text">Nom + SIREN + client associé (20 à 50 lignes). Stockez-la dans un <strong>Claude Project</strong> pour la réutiliser chaque&nbsp;semaine.</p>
+                    <p class="step-text">Nom + SIREN pour chaque client et prospect suivi (20 à 50 lignes). Dans un <strong>Claude Project</strong> — réutilisable chaque semaine, sans jamais&nbsp;ressaisir.</p>
                   </td>
                 </tr>
                 <tr class="step-row">
                   <td width="42" valign="top"><p class="step-num">2</p></td>
                   <td valign="top">
-                    <p class="step-title">Lancez la routine chaque&nbsp;semaine</p>
-                    <p class="step-text">Copiez-collez le prompt. Les signaux sont triés automatiquement par niveau&nbsp;d'urgence.</p>
+                    <p class="step-title">Chaque lundi : 5 minutes sur les&nbsp;signaux</p>
+                    <p class="step-text">BODACC et holdings en création. Premier lundi du mois : 10 minutes supplémentaires sur dividendes non structurés, modifications de capital, dirigeants&nbsp;55+.</p>
                   </td>
                 </tr>
                 <tr class="step-row">
                   <td width="42" valign="top"><p class="step-num">3</p></td>
                   <td valign="top">
-                    <p class="step-title">Appelez les bons clients en&nbsp;priorité</p>
-                    <p class="step-text">Traitez les dossiers rouges en premier. Le rapport est <strong>exportable au dossier KYC</strong> avec source, date et action&nbsp;proposée.</p>
+                    <p class="step-title">Sur chaque signal : brief en 4&nbsp;minutes</p>
+                    <p class="step-text">Avant d'appeler, lancez le prompt de brief individuel. Vous arrivez avec la situation financière, les événements récents, les sujets à ouvrir — pas une question&nbsp;ouverte.</p>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
+          <!-- PROMPT -->
           <tr>
             <td class="section-soft pad-x pad-prompt" style="border-bottom:1px solid #E6DDD2;">
               <table role="presentation" width="100%" class="prompt-card">
                 <tr>
                   <td class="prompt-header">
-                    <p class="prompt-label">Prompt · à copier</p>
-                    <p class="prompt-hint">Claude + Pappers MCP</p>
+                    <p class="prompt-label">Prompt · Signal cession BODACC · à copier</p>
+                    <p class="prompt-hint">Claude + Data.gouv MCP + Pappers MCP — chaque lundi matin</p>
                   </td>
                 </tr>
                 <tr>
-                  <td class="prompt-body"><span class="hl">Via Pappers</span>, analyse ces entités :
+                  <td class="prompt-body"><span class="hl">Via Data.gouv</span>, interroge le BODACC et identifie
+toutes les cessions publiées dans les 14 derniers
+jours pour les entités suivantes :
 
-<span class="dim">[Entreprise A · SIREN 123456789 · Client Martin]
-[Holding Dupont · SIREN 987654321 · Client Dupont]</span>
+<span class="dim">[Dirigeant Martin · SIREN 123456789 · Client suivi]
+[Dupont SAS · SIREN 987654321 · Prospect]</span>
 
-Pour chaque entité, vérifie :
-<span class="hl">1.</span> Procédure collective en cours
-<span class="hl">2.</span> Publications BODACC sur 12 mois
-<span class="hl">3.</span> Changement dirigeant ou bénéficiaire
-<span class="hl">4.</span> Bilan annuel non déposé / retard
-<span class="hl">5.</span> Statut : VERT / ORANGE / ROUGE + action immédiate
+<span class="hl">Via Pappers</span>, pour chaque cession identifiée :
+<span class="hl">1.</span> CA sur le dernier exercice disponible
+<span class="hl">2.</span> Estimation du produit de cession brut
+<span class="hl">3.</span> Jours restants dans la fenêtre des 90 jours
+<span class="hl">4.</span> Sujets patrimoniaux prioritaires :
+   apport-cession, assurance-vie luxembourgeoise,
+   Dutreil rétroactif si applicable, réinvestissement
 
-Retour attendu : tableau synthèse + top 5 urgences de la semaine, avec source, date et&nbsp;action.</td>
+Statut : <span class="hl">ROUGE</span> (&lt; 30 j) / <span class="hl">ORANGE</span> (30–60 j) / <span class="hl">VERT</span> (> 60 j)</td>
                 </tr>
               </table>
             </td>
           </tr>
 
+          <!-- OUTPUT EXEMPLE -->
           <tr>
             <td class="section-paper pad-x pad-output" style="border-bottom:1px solid #E6DDD2;">
-              <p class="label" style="color:#A09080;">Ce que vous décidez en une&nbsp;lecture</p>
+              <p class="label" style="color:#A09080;">Exemple de sortie</p>
               <table role="presentation" width="100%" class="output-card">
                 <tr class="output-row">
                   <td class="output-cell">
-                    <span class="badge badge-r">Rouge</span>
-                    <p class="out-name">Holding Dupont</p>
-                    <p class="out-siren">SIREN 987654321</p>
-                    <p class="out-detail">Nantissement fonds de commerce (14/04). Bilan 2024 non déposé, retard 3 mois. Deux signaux&nbsp;croisés.</p>
-                    <p class="out-source">BODACC · INPI · RCS</p>
-                    <p class="out-action">→ Appel urgent : liquidités et garanties à&nbsp;vérifier</p>
+                    <span class="badge badge-r">Rouge · 83 j restants</span>
+                    <p class="out-name">Martin &amp; Associés SAS</p>
+                    <p class="out-siren">SIREN 123456789</p>
+                    <p class="out-detail">Cession publiée BODACC le 08/05. CA 2023 : 3,2&nbsp;M€. Produit estimé : 2,1&nbsp;M€ (multiple ×0,65). 83 jours restants dans la fenêtre fiscale — délai critique pour l'apport-cession.</p>
+                    <p class="out-source">BODACC · Data.gouv · Pappers</p>
+                    <p class="out-action">→ Appel cette semaine : apport-cession, structuration du réinvestissement</p>
                   </td>
                 </tr>
                 <tr class="output-row">
                   <td class="output-cell">
-                    <span class="badge badge-o">Orange</span>
-                    <p class="out-name">SAS Martin Immobilier</p>
-                    <p class="out-siren">SIREN 123456789</p>
-                    <p class="out-detail">Nouveau dirigeant associé depuis le 02/04 (cession 80%). Modification non signalée lors du dernier&nbsp;RDV.</p>
-                    <p class="out-source">INPI · INSEE</p>
-                    <p class="out-action">→ Point client obligatoire : mise à jour dossier&nbsp;KYC</p>
+                    <span class="badge badge-o">Orange · Holding créée</span>
+                    <p class="out-name">DPT Patrimoine SAS</p>
+                    <p class="out-siren">SIREN 987654321 · Dirigeant : Dupont</p>
+                    <p class="out-detail">Holding créée le 02/05 (NAF 6420Z, capital 100&nbsp;000&nbsp;€). Deux sociétés opérationnelles détenues. Signal fort de restructuration en cours — cession ou transmission probable à horizon&nbsp;12&nbsp;mois.</p>
+                    <p class="out-source">SIRENE · Data.gouv · Pappers</p>
+                    <p class="out-action">→ Rendez-vous à planifier : OBO, pacte Dutreil, structuration IS holding</p>
                   </td>
                 </tr>
                 <tr class="output-row">
                   <td class="output-cell">
                     <span class="badge badge-g">Vert</span>
-                    <p class="out-name">SCI Les Acacias</p>
+                    <p class="out-name">Famille Leclerc SCI</p>
                     <p class="out-siren">SIREN 456789123</p>
-                    <p class="out-detail">RCS à jour. Bilan 2024 déposé le 05/03. Aucune publication BODACC sur 12&nbsp;mois.</p>
-                    <p class="out-source">INPI · BODACC</p>
+                    <p class="out-detail">Aucune publication BODACC sur 14 jours. RCS à jour. Aucun signal patrimonial&nbsp;détecté.</p>
+                    <p class="out-source">BODACC · Data.gouv</p>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
+          <!-- CLOSING -->
           <tr>
             <td class="section-paper pad-x pad-closing">
-              <p class="closing-text">50 clients. Chaque semaine. 10&nbsp;minutes.<br><em>Moins de risques, plus de décisions&nbsp;utiles.</em></p>
+              <p class="closing-text">Un de vos clients a probablement cédé cette semaine. Il lui reste 83 jours.<br><em>Qui appelez-vous en&nbsp;premier&nbsp;?</em></p>
               <p class="cta-wrap">
                 <a class="cta-link" href="https://calendly.com/thomas-financee/30min">Réserver un call démo de 30&nbsp;min</a>
               </p>
             </td>
           </tr>
 
+          <!-- FOOTER -->
           <tr>
             <td class="footer pad-footer">
               <p class="footer-text">
+                <span class="footer-highlight">
+                  Pour aller plus loin :
+                  <a href="https://www.notion.so/Data-gouv-Pappers-MCP-Veille-patrimoniale-intelligence-client-34418ce63d998100bc7bcea3c834c502">Data.gouv + Pappers MCP — Veille patrimoniale &amp; intelligence client</a>
+                </span>
                 Vous recevez cet email car vous avez demandé des ressources sur la veille&nbsp;client.<br>
-                <a href="mailto:contact@charliefinancialadvisor.com?subject=Désabonnement%20newsletter">Se désabonner</a>
-                &nbsp;·&nbsp;
-                <a href="https://www.charliefinancialadvisor.com/newsletter">Voir en ligne</a>
+                <a href="{{UNSUBSCRIBE_URL}}">Se désabonner</a>
                 &nbsp;·&nbsp;
                 <a href="https://www.charliefinancialadvisor.com">charliefinancialadvisor.com</a>
               </p>

@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import crypto from 'node:crypto';
 import http from 'node:http';
 import { createClient } from '@supabase/supabase-js';
 import { Webhook } from 'svix';
@@ -82,6 +83,35 @@ const webhookSecret = assertEnv('RESEND_WEBHOOK_SECRET');
 const port = Number(process.env.NEWSLETTER_WEBHOOK_PORT || process.env.PORT || 8787);
 const webhookPath = process.env.NEWSLETTER_WEBHOOK_PATH || '/webhooks/resend';
 
+const unsubscribeSecret = process.env.UNSUBSCRIBE_SECRET || '';
+const subscribersTable = process.env.NEWSLETTER_SUBSCRIBERS_TABLE || 'leads';
+const emailColumn = process.env.NEWSLETTER_EMAIL_COLUMN || 'email';
+const optInColumn = process.env.NEWSLETTER_OPT_IN_COLUMN || 'newsletter_opt_in';
+const unsubscribedAtColumn = process.env.NEWSLETTER_UNSUBSCRIBED_AT_COLUMN || 'unsubscribed_at';
+
+function generateUnsubscribeToken(email) {
+  return crypto.createHmac('sha256', unsubscribeSecret).update(email).digest('hex');
+}
+
+function verifyUnsubscribeToken(email, token) {
+  const expected = generateUnsubscribeToken(email);
+  const expectedBuf = Buffer.from(expected, 'hex');
+  let tokenBuf;
+  try {
+    tokenBuf = Buffer.from(token, 'hex');
+  } catch {
+    return false;
+  }
+  if (tokenBuf.length !== expectedBuf.length) return false;
+  return crypto.timingSafeEqual(tokenBuf, expectedBuf);
+}
+
+function unsubscribePage(success, message) {
+  const color = success ? '#0E7A8A' : '#7A1818';
+  const icon = success ? '✓' : '✕';
+  return `<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Charlie · Désabonnement</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#E8E1D7;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.card{background:#FFFEFB;border:1px solid #CEC3B3;border-radius:8px;max-width:440px;width:100%;padding:48px 40px;text-align:center}.icon{width:48px;height:48px;border-radius:50%;background:${color};color:#fff;font-size:22px;line-height:48px;margin:0 auto 24px}.title{font-size:20px;font-weight:700;color:#0D0B08;margin-bottom:12px}.text{font-size:14px;line-height:1.7;color:#6A6055}.site{display:block;margin-top:28px;font-size:12px;color:#A09080;text-decoration:none}a{color:#0E7A8A}</style></head><body><div class="card"><div class="icon">${icon}</div><p class="title">${success ? 'Vous êtes désabonné' : 'Lien invalide'}</p><p class="text">${message}</p><a class="site" href="https://www.charliefinancialadvisor.com">charliefinancialadvisor.com</a></div></body></html>`;
+}
+
 const supabase = createClient(supabaseUrl, supabaseServiceRoleKey, {
   auth: { persistSession: false }
 });
@@ -93,10 +123,52 @@ function sendJson(res, statusCode, body) {
   res.end(JSON.stringify(body));
 }
 
+function sendHtml(res, statusCode, body) {
+  res.writeHead(statusCode, { 'content-type': 'text/html; charset=utf-8' });
+  res.end(body);
+}
+
 const server = http.createServer(async (req, res) => {
   try {
     if (req.method === 'GET' && req.url === '/health') {
       return sendJson(res, 200, { ok: true });
+    }
+
+    if (req.method === 'GET' && req.url?.startsWith('/unsubscribe')) {
+      if (!unsubscribeSecret) {
+        console.error('[unsubscribe] UNSUBSCRIBE_SECRET not configured');
+        return sendHtml(res, 500, unsubscribePage(false, 'Configuration manquante. Contactez l\'administrateur.'));
+      }
+
+      const params = new URL(req.url, `http://localhost:${port}`).searchParams;
+      const email = (params.get('email') || '').trim().toLowerCase();
+      const token = params.get('sig') || '';
+
+      if (!email || !token) {
+        return sendHtml(res, 400, unsubscribePage(false, 'Lien de désabonnement invalide.'));
+      }
+
+      if (!verifyUnsubscribeToken(email, token)) {
+        return sendHtml(res, 400, unsubscribePage(false, 'Lien de désabonnement invalide ou expiré.'));
+      }
+
+      // Update ALL rows for this email — a prospect can have multiple rows (one per document)
+      // We mark every row as opted-out so no duplicate row can slip through the send filter
+      const { error } = await supabase
+        .from(subscribersTable)
+        .update({
+          [unsubscribedAtColumn]: new Date().toISOString(),
+          [optInColumn]: false
+        })
+        .eq(emailColumn, email);
+
+      if (error) {
+        console.error('[unsubscribe] supabase error:', error.message);
+        return sendHtml(res, 500, unsubscribePage(false, 'Une erreur est survenue. Réessayez dans quelques instants.'));
+      }
+
+      console.log(`[unsubscribe] ${email} désabonné`);
+      return sendHtml(res, 200, unsubscribePage(true, `L'adresse <strong>${email}</strong> a été retirée de la liste. Vous ne recevrez plus d'emails de notre part.`));
     }
 
     if (req.method !== 'POST' || req.url !== webhookPath) {

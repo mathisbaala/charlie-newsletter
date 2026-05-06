@@ -108,13 +108,13 @@ Si ta table/colonnes ont d'autres noms, ajuste dans `.env`:
 2. Prévisualise l'audience sans envoi:
 
 ```bash
-npm run newsletter:dry -- --subject "CHARLIE #14" --campaign "charlie_2026_04_24"
+npm run newsletter:dry -- --subject "CHARLIE #15 · 4 mai 2026" --campaign "charlie_2026_05_04"
 ```
 
 3. Envoi global:
 
 ```bash
-npm run newsletter:send -- --subject "CHARLIE #14" --campaign "charlie_2026_04_24"
+npm run newsletter:send -- --subject "CHARLIE #15 · 4 mai 2026" --campaign "charlie_2026_05_04"
 ```
 
 4. Envoi test sur une adresse (hors base abonnés):
@@ -122,8 +122,8 @@ npm run newsletter:send -- --subject "CHARLIE #14" --campaign "charlie_2026_04_2
 ```bash
 node scripts/send-newsletter.mjs \
   --file index.html \
-  --subject "CHARLIE #14 - test" \
-  --campaign "charlie_2026_04_24_test" \
+  --subject "CHARLIE #15 · 4 mai 2026 - test" \
+  --campaign "charlie_2026_05_04_test" \
   --to "toi@domaine.com" \
   --confirm
 ```
@@ -149,7 +149,7 @@ npm run newsletter:metrics
 Une campagne précise + top liens:
 
 ```bash
-npm run newsletter:metrics -- --campaign "charlie_2026_04_24" --links
+npm run newsletter:metrics -- --campaign "charlie_2026_05_04" --links
 ```
 
 ### Dashboard/SQL Supabase
@@ -161,7 +161,7 @@ order by last_event_at desc;
 
 select *
 from public.newsletter_campaign_link_metrics
-where campaign = 'charlie_2026_04_24'
+where campaign = 'charlie_2026_05_04'
 order by unique_clicks desc;
 ```
 
