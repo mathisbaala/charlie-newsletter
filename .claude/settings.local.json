@@ -9,7 +9,11 @@
       "Read(//tmp/**)",
       "Bash(python3 -m http.server 3477)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3477/)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "mcp__3f48f966-6fd5-497e-a58d-a1d6dce5e268__list_projects",
+      "mcp__3f48f966-6fd5-497e-a58d-a1d6dce5e268__list_tables",
+      "mcp__3f48f966-6fd5-497e-a58d-a1d6dce5e268__execute_sql",
+      "Bash(python3 -c ' *)"
     ]
   }
 }
