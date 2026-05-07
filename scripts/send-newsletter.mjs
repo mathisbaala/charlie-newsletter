@@ -8,7 +8,7 @@ import { Resend } from 'resend';
 function parseArgs(argv) {
   const parsed = {
     file: 'index.html',
-    subject: process.env.NEWSLETTER_DEFAULT_SUBJECT || 'Charlie Newsletter',
+    subject: process.env.NEWSLETTER_DEFAULT_SUBJECT || 'Un de vos clients a bougé.',
     campaign: process.env.NEWSLETTER_DEFAULT_CAMPAIGN || '',
     batchSize: 100,
     dryRun: false,

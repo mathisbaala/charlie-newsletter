@@ -110,13 +110,13 @@ Ensuite supprime la table obsolète:
 2. Prévisualise l'audience sans envoi:
 
 ```bash
-npm run newsletter:dry -- --subject "Quelque chose vient de se passer chez un de vos clients. Vous ne le savez pas encore." --campaign "charlie_2026_05_11_data_gouv_pappers_mcp"
+npm run newsletter:dry -- --subject "Un de vos clients a bougé." --campaign "charlie_2026_05_11_data_gouv_pappers_mcp"
 ```
 
 3. Envoi global:
 
 ```bash
-npm run newsletter:send -- --subject "Quelque chose vient de se passer chez un de vos clients. Vous ne le savez pas encore." --campaign "charlie_2026_05_11_data_gouv_pappers_mcp"
+npm run newsletter:send -- --subject "Un de vos clients a bougé." --campaign "charlie_2026_05_11_data_gouv_pappers_mcp"
 ```
 
 4. Envoi test sur une adresse (hors base abonnés):
@@ -124,7 +124,7 @@ npm run newsletter:send -- --subject "Quelque chose vient de se passer chez un d
 ```bash
 node scripts/send-newsletter.mjs \
   --file index.html \
-  --subject "Quelque chose vient de se passer chez un de vos clients. Vous ne le savez pas encore. - test" \
+  --subject "Un de vos clients a bougé. - test" \
   --campaign "charlie_2026_05_11_data_gouv_pappers_mcp_test" \
   --to "toi@domaine.com" \
   --confirm
