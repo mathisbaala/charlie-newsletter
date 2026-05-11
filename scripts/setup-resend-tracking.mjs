@@ -81,8 +81,11 @@ async function main() {
       }
     });
   } catch (error) {
-    if (String(error.message).toLowerCase().includes('once every 24 hours')) {
+    const message = String(error.message).toLowerCase();
+    if (message.includes('once every 24 hours')) {
       console.warn('[tracking] warning: tracking subdomain was updated recently; skipping PATCH for now.');
+    } else if (message.includes('tracking domain with the subdomain') && message.includes('already exists')) {
+      console.warn('[tracking] warning: tracking subdomain already exists for this domain; keeping current configuration.');
     } else {
       throw error;
     }

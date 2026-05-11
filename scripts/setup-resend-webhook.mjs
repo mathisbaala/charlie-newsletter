@@ -57,6 +57,13 @@ async function resendRequest(path, { method = 'GET', body } = {}) {
   return payload;
 }
 
+function unwrapResource(payload) {
+  if (payload && typeof payload === 'object' && payload.data && typeof payload.data === 'object') {
+    return payload.data;
+  }
+  return payload;
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
 
@@ -74,23 +81,25 @@ async function main() {
   let mode;
 
   if (existing) {
-    webhook = await resendRequest(`/webhooks/${existing.id}`, {
+    const updated = unwrapResource(await resendRequest(`/webhooks/${existing.id}`, {
       method: 'PATCH',
       body: {
         endpoint: args.endpoint,
         events,
         status: 'enabled'
       }
-    });
+    }));
+    webhook = unwrapResource(await resendRequest(`/webhooks/${updated.id || existing.id}`));
     mode = 'updated';
   } else {
-    webhook = await resendRequest('/webhooks', {
+    const created = unwrapResource(await resendRequest('/webhooks', {
       method: 'POST',
       body: {
         endpoint: args.endpoint,
         events
       }
-    });
+    }));
+    webhook = unwrapResource(await resendRequest(`/webhooks/${created.id}`));
     mode = 'created';
   }
 
