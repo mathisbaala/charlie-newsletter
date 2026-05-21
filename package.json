@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "node scripts/resend-webhook-server.mjs",
+    "newsletter:build": "node scripts/build-edition.mjs",
     "newsletter:dry": "node scripts/send-newsletter.mjs --file index.html --dry-run",
     "newsletter:dry:200": "node scripts/send-newsletter.mjs --file index.html --dry-run --resume-campaign --limit 200",
     "newsletter:send": "node scripts/send-newsletter.mjs --file index.html --confirm",

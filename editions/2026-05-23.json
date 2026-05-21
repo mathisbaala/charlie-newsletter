@@ -1,0 +1,47 @@
+{
+  "SUBJECT": "47 dirigeants viennent de vendre. Combien sont vos clients ?",
+  "CAMPAIGN": "charlie_2026_05_23_intelligence_patrimoine_01_signaux_cession",
+  "PREHEADER": "BODACC · semaine du 12-19 mai : 47 cessions IDF dans vos NAF. 1 à 3 sont déjà dans votre book.",
+  "META_TITLE": "Intelligence Patrimoine #17 · Signaux cession BODACC",
+
+  "EDITION_NUMBER": "17",
+  "EDITION_DATE": "Vendredi 23 mai 2026",
+  "EDITION_TAGLINE": "Ce que vos confrères apprennent 6 semaines après la banque privée.",
+
+  "HOOK_TITLE": "{{PRENOM}}, 47 dirigeants viennent de vendre. Combien sont vos clients ?",
+  "HOOK_BODY": "Cette semaine, le BODACC a publié 47 cessions de parts ou de fonds de commerce en Île-de-France, dans les secteurs où les CGP de votre profil accompagnent le plus de dirigeants. Statistiquement, <strong>1 à 3 d'entre eux figurent déjà dans votre book</strong>. Le problème n'est pas qu'ils vendent — c'est que vous l'apprenez en moyenne 6 semaines trop tard, une fois que la banque privée a déjà appelé.",
+
+  "SIGNAL_FIGURE": "47",
+  "SIGNAL_UNIT": "cessions de contrôle publiées au BODACC · 12–19 mai 2026",
+  "SIGNAL_TITLE": "Île-de-France · conseil, professions libérales & holdings patrimoniales",
+  "SIGNAL_TEXT_1": "Ces 47 publications regroupent cessions de parts sociales, ventes de fonds de commerce et apports partiels d'actif dans les codes NAF que suivent en moyenne les CGP indépendants : 6920Z (expertise comptable), 6622Z (courtage assurance), 7022Z (conseil pour les affaires), 6831Z (agences immobilières), 6910Z (activités juridiques). <strong>12 d'entre elles concernent des sociétés dont le dernier exercice publié dépasse 2 M€ de chiffre d'affaires.</strong>",
+  "SIGNAL_TEXT_2": "<strong>La fenêtre d'action est étroite</strong> : entre la publication BODACC et le premier appel d'une banque privée chez le dirigeant, on observe en moyenne 18 jours. Au-delà, le mandat de gestion sur le produit de cession est presque toujours capté par un acteur qui était déjà au contact dans la semaine suivant l'annonce.",
+  "SIGNAL_ACTION": "→ Répondez à ce mail avec votre département et vos 3 codes NAF prioritaires — je vous renvoie la liste extraite sur votre périmètre sous 24h.",
+  "SIGNAL_SOURCE": "Source : BODACC · annonces publiées 12-19 mai 2026 · filtrage NAF 6920Z / 6622Z / 7022Z / 6831Z / 6910Z · périmètre Île-de-France (75, 77, 78, 91, 92, 93, 94, 95).",
+
+  "CASE_ACTOR": "Sophie L., CGP indépendante · Lyon · book actif ~85 clients",
+  "CASE_TITLE": "Un mandat de 1,3 M€ remporté avant la banque privée",
+  "CASE_TRIGGER": "Mardi 6 mai 2026, alerte BODACC croisée avec son CRM : <strong>un client suivi depuis 2019</strong> vient de céder 60 % de sa SARL d'expertise comptable. Sophie n'avait reçu aucune information préalable — le dirigeant ne l'avait pas prévenue.",
+  "CASE_ACTION": "Appel le jour même, 14h. <strong>3 questions, 12 minutes</strong> : « Comment vous vous sentez ? À combien vous attendiez-vous ? Qu'est-ce qui vous inquiète maintenant ? » Rendez-vous calé le vendredi suivant. Mémo préparé en 8 minutes avec le prompt qui suit.",
+  "CASE_RESULT_FIGURE": "1,3 M€",
+  "CASE_RESULT_TEXT": "Mandat de gestion signé 11 jours plus tard, <strong>3 semaines avant le premier appel de la banque privée concurrente</strong>. Le différentiel d'antériorité a fait toute la conversation : le dirigeant a confié la totalité du produit de cession à l'interlocuteur qui était déjà là.",
+
+  "TOOL_TITLE": "Le prompt qui prépare votre appel post-cession en 8 minutes",
+  "TOOL_TEXT": "Copiez ce prompt dans Claude ou ChatGPT, collez les données BODACC du dirigeant et le dernier mémo client de votre CRM. Vous obtenez un mémo de 1 page prêt à porter dans l'appel : situation actuelle, <strong>3 angles d'entrée différenciés</strong>, questions à éviter, points fiscaux à valider avec son notaire.",
+  "TOOL_PROMPT_LABEL": "Prompt · Mémo pré-appel post-cession · à copier",
+  "TOOL_PROMPT_HINT": "À déclencher dans les 18 jours suivant la publication BODACC",
+  "TOOL_PROMPT_BODY": "Tu es mon analyste patrimoine. Je dois appeler dans\n<span class=\"hl\">48h</span> un client qui vient d'apparaître au BODACC\npour une cession de parts.\n\nVoici ses données publiques :\n<span class=\"dim\">[coller le résumé BODACC : forme juridique,\n %cédé, prix si publié, acquéreur, date d'effet]</span>\n\nVoici ce que je sais de lui en interne :\n<span class=\"dim\">[coller le dernier mémo CRM : situation famille,\n patrimoine connu, objectifs déclarés, dernier RDV]</span>\n\nProduis un mémo de <span class=\"hl\">1 page maximum</span> avec :\n<span class=\"hl\">(1)</span> Lecture rapide de l'opération : ce qui est\n    public, ce qui ne l'est pas, ce qu'on peut déduire.\n<span class=\"hl\">(2)</span> Trois angles d'entrée différenciés pour\n    l'appel (pas un pitch — des questions ouvertes).\n<span class=\"hl\">(3)</span> Trois questions à NE PAS poser tout de\n    suite (sensibilité, séquencement).\n<span class=\"hl\">(4)</span> Points fiscaux à faire valider par son\n    notaire avant ma proposition (apport-cession 150-0\n    B ter, holding, donation avant cession, remploi).\n<span class=\"hl\">(5)</span> Une phrase d'ouverture d'appel, en français\n    naturel, sans jargon, sans flatterie.\n\nTon : direct, factuel, opérationnel.\nAucune donnée nominative dans le rendu.",
+
+  "STAT_FIGURE": "63 %",
+  "STAT_TITLE": "des dirigeants ayant cédé leur PME en 2024 n'ont toujours pas formalisé leur stratégie patrimoniale 9 mois plus tard",
+  "STAT_TEXT": "Ils restent en compte d'attente, sans interlocuteur structurant. <strong>Or 9 mois est précisément la fenêtre pendant laquelle ils prennent leurs décisions patrimoniales lourdes</strong> : remploi en immobilier locatif, donation aux enfants, holding, démembrement, assurance-vie. Le premier conseil mobilisé pendant cette fenêtre est presque toujours celui qui structure les 5 années suivantes.",
+  "STAT_SOURCE": "Source : BPCE L'Observatoire · Le marché de la cession-transmission des PME en France · édition 2025.",
+
+  "CTA_TITLE": "Et si vous receviez chaque vendredi la <em>liste des dirigeants de votre book</em> qui viennent d'apparaître sur BODACC ?",
+  "CTA_TEXT": "30 minutes avec moi pour voir si ça a du sens sur votre périmètre. Pas de pitch produit — on regarde votre book réel, on identifie les 3 NAF où vous concentrez le plus de dirigeants, et je vous montre la liste BODACC que vous auriez reçue ce mois-ci.",
+  "CTA_URL": "https://cal.com/mathisbaala/charlie-discovery",
+  "CTA_LABEL": "Réserver 30 minutes →",
+  "CTA_FALLBACK": "Ou répondez à ce mail — je lis chaque réponse personnellement.",
+
+  "SIG_META": "Édition #17 · Intelligence Patrimoine · Semaine du 19–23 mai 2026"
+}

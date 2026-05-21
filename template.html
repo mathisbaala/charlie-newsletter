@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="color-scheme" content="light only">
   <meta name="supported-color-schemes" content="light only">
-  <title>Intelligence Patrimoine #17 · Signaux cession BODACC</title>
+  <title>{{META_TITLE}}</title>
   <!--
     Charlie · Intelligence Patrimoine · template V2
-    Édition #17 — Vendredi 23 mai 2026
-    SUBJECT  : 47 dirigeants viennent de vendre. Combien sont vos clients ?
-    CAMPAIGN : charlie_2026_05_23_intelligence_patrimoine_01_signaux_cession
+    Édition #{{EDITION_NUMBER}} — {{EDITION_DATE}}
+    SUBJECT  : {{SUBJECT}}
+    CAMPAIGN : {{CAMPAIGN}}
     Variables PRENOM et UNSUBSCRIBE_URL sont injectées au moment de l'envoi
     par scripts/send-newsletter.mjs — ne PAS les injecter au build.
   -->
@@ -438,7 +438,7 @@
   </style>
 </head>
 <body>
-  <div class="preheader">BODACC · semaine du 12-19 mai : 47 cessions IDF dans vos NAF. 1 à 3 sont déjà dans votre book.</div>
+  <div class="preheader">{{PREHEADER}}</div>
   <table role="presentation" width="100%" bgcolor="#E8E1D7">
     <tr>
       <td align="center" class="outer-pad" style="padding: 48px 16px;">
@@ -459,8 +459,8 @@
           <!-- HEADER · edition bar -->
           <tr>
             <td class="edition-bar">
-              <p class="edition-bar-num">Intelligence Patrimoine · Édition #17 · Vendredi 23 mai 2026</p>
-              <p class="edition-bar-tag">Ce que vos confrères apprennent 6 semaines après la banque privée.</p>
+              <p class="edition-bar-num">Intelligence Patrimoine · Édition #{{EDITION_NUMBER}} · {{EDITION_DATE}}</p>
+              <p class="edition-bar-tag">{{EDITION_TAGLINE}}</p>
             </td>
           </tr>
 
@@ -468,8 +468,8 @@
           <tr>
             <td class="section-paper pad-x pad-hook" style="border-bottom:1px solid #E6DDD2;">
               <p class="kicker">Cette semaine</p>
-              <p class="title">{{PRENOM}}, 47 dirigeants viennent de vendre. Combien sont vos clients ?</p>
-              <p class="body-text">Cette semaine, le BODACC a publié 47 cessions de parts ou de fonds de commerce en Île-de-France, dans les secteurs où les CGP de votre profil accompagnent le plus de dirigeants. Statistiquement, <strong>1 à 3 d'entre eux figurent déjà dans votre book</strong>. Le problème n'est pas qu'ils vendent — c'est que vous l'apprenez en moyenne 6 semaines trop tard, une fois que la banque privée a déjà appelé.</p>
+              <p class="title">{{HOOK_TITLE}}</p>
+              <p class="body-text">{{HOOK_BODY}}</p>
             </td>
           </tr>
 
@@ -477,13 +477,13 @@
           <tr>
             <td class="section-dark pad-x pad-signal">
               <p class="kicker kicker-dim">Signal propriétaire</p>
-              <p class="signal-figure">47</p>
-              <p class="signal-unit">cessions de contrôle publiées au BODACC · 12–19 mai 2026</p>
-              <p class="signal-title">Île-de-France · conseil, professions libérales &amp; holdings patrimoniales</p>
-              <p class="signal-text">Ces 47 publications regroupent cessions de parts sociales, ventes de fonds de commerce et apports partiels d'actif dans les codes NAF que suivent en moyenne les CGP indépendants : 6920Z (expertise comptable), 6622Z (courtage assurance), 7022Z (conseil pour les affaires), 6831Z (agences immobilières), 6910Z (activités juridiques). <strong>12 d'entre elles concernent des sociétés dont le dernier exercice publié dépasse 2 M€ de chiffre d'affaires.</strong></p>
-              <p class="signal-text"><strong>La fenêtre d'action est étroite</strong> : entre la publication BODACC et le premier appel d'une banque privée chez le dirigeant, on observe en moyenne 18 jours. Au-delà, le mandat de gestion sur le produit de cession est presque toujours capté par un acteur qui était déjà au contact dans la semaine suivant l'annonce.</p>
-              <p class="signal-action">→ Répondez à ce mail avec votre département et vos 3 codes NAF prioritaires — je vous renvoie la liste extraite sur votre périmètre sous 24h.</p>
-              <p class="signal-source">Source : BODACC · annonces publiées 12-19 mai 2026 · filtrage NAF 6920Z / 6622Z / 7022Z / 6831Z / 6910Z · périmètre Île-de-France (75, 77, 78, 91, 92, 93, 94, 95).</p>
+              <p class="signal-figure">{{SIGNAL_FIGURE}}</p>
+              <p class="signal-unit">{{SIGNAL_UNIT}}</p>
+              <p class="signal-title">{{SIGNAL_TITLE}}</p>
+              <p class="signal-text">{{SIGNAL_TEXT_1}}</p>
+              <p class="signal-text">{{SIGNAL_TEXT_2}}</p>
+              <p class="signal-action">{{SIGNAL_ACTION}}</p>
+              <p class="signal-source">{{SIGNAL_SOURCE}}</p>
             </td>
           </tr>
 
@@ -491,21 +491,21 @@
           <tr>
             <td class="section-paper pad-x pad-case" style="border-bottom:1px solid #E6DDD2;">
               <p class="kicker">Sur le terrain</p>
-              <p class="case-meta">Sophie L., CGP indépendante · Lyon · book actif ~85 clients</p>
-              <p class="case-title">Un mandat de 1,3 M€ remporté avant la banque privée</p>
+              <p class="case-meta">{{CASE_ACTOR}}</p>
+              <p class="case-title">{{CASE_TITLE}}</p>
               <table role="presentation" width="100%" class="case-act-table">
                 <tr class="case-act-row">
                   <td class="case-act-num">01 / Déclencheur</td>
-                  <td><p class="case-act-body">Mardi 6 mai 2026, alerte BODACC croisée avec son CRM : <strong>un client suivi depuis 2019</strong> vient de céder 60 % de sa SARL d'expertise comptable. Sophie n'avait reçu aucune information préalable — le dirigeant ne l'avait pas prévenue.</p></td>
+                  <td><p class="case-act-body">{{CASE_TRIGGER}}</p></td>
                 </tr>
                 <tr class="case-act-row">
                   <td class="case-act-num">02 / Action</td>
-                  <td><p class="case-act-body">Appel le jour même, 14h. <strong>3 questions, 12 minutes</strong> : « Comment vous vous sentez ? À combien vous attendiez-vous ? Qu'est-ce qui vous inquiète maintenant ? » Rendez-vous calé le vendredi suivant. Mémo préparé en 8 minutes avec le prompt qui suit.</p></td>
+                  <td><p class="case-act-body">{{CASE_ACTION}}</p></td>
                 </tr>
               </table>
               <div class="case-result">
-                <p class="case-result-figure">1,3 M€</p>
-                <p class="case-result-text">Mandat de gestion signé 11 jours plus tard, <strong>3 semaines avant le premier appel de la banque privée concurrente</strong>. Le différentiel d'antériorité a fait toute la conversation : le dirigeant a confié la totalité du produit de cession à l'interlocuteur qui était déjà là.</p>
+                <p class="case-result-figure">{{CASE_RESULT_FIGURE}}</p>
+                <p class="case-result-text">{{CASE_RESULT_TEXT}}</p>
               </div>
             </td>
           </tr>
@@ -514,43 +514,17 @@
           <tr>
             <td class="section-soft pad-x pad-tool" style="border-bottom:1px solid #E6DDD2;">
               <p class="kicker">Outil tactique · 48h</p>
-              <p class="tool-title">Le prompt qui prépare votre appel post-cession en 8 minutes</p>
-              <p class="tool-text">Copiez ce prompt dans Claude ou ChatGPT, collez les données BODACC du dirigeant et le dernier mémo client de votre CRM. Vous obtenez un mémo de 1 page prêt à porter dans l'appel : situation actuelle, <strong>3 angles d'entrée différenciés</strong>, questions à éviter, points fiscaux à valider avec son notaire.</p>
+              <p class="tool-title">{{TOOL_TITLE}}</p>
+              <p class="tool-text">{{TOOL_TEXT}}</p>
               <table role="presentation" width="100%" class="prompt-card">
                 <tr>
                   <td class="prompt-header">
-                    <p class="prompt-label">Prompt · Mémo pré-appel post-cession · à copier</p>
-                    <p class="prompt-hint">À déclencher dans les 18 jours suivant la publication BODACC</p>
+                    <p class="prompt-label">{{TOOL_PROMPT_LABEL}}</p>
+                    <p class="prompt-hint">{{TOOL_PROMPT_HINT}}</p>
                   </td>
                 </tr>
                 <tr>
-                  <td class="prompt-body">Tu es mon analyste patrimoine. Je dois appeler dans
-<span class="hl">48h</span> un client qui vient d'apparaître au BODACC
-pour une cession de parts.
-
-Voici ses données publiques :
-<span class="dim">[coller le résumé BODACC : forme juridique,
- %cédé, prix si publié, acquéreur, date d'effet]</span>
-
-Voici ce que je sais de lui en interne :
-<span class="dim">[coller le dernier mémo CRM : situation famille,
- patrimoine connu, objectifs déclarés, dernier RDV]</span>
-
-Produis un mémo de <span class="hl">1 page maximum</span> avec :
-<span class="hl">(1)</span> Lecture rapide de l'opération : ce qui est
-    public, ce qui ne l'est pas, ce qu'on peut déduire.
-<span class="hl">(2)</span> Trois angles d'entrée différenciés pour
-    l'appel (pas un pitch — des questions ouvertes).
-<span class="hl">(3)</span> Trois questions à NE PAS poser tout de
-    suite (sensibilité, séquencement).
-<span class="hl">(4)</span> Points fiscaux à faire valider par son
-    notaire avant ma proposition (apport-cession 150-0
-    B ter, holding, donation avant cession, remploi).
-<span class="hl">(5)</span> Une phrase d'ouverture d'appel, en français
-    naturel, sans jargon, sans flatterie.
-
-Ton : direct, factuel, opérationnel.
-Aucune donnée nominative dans le rendu.</td>
+                  <td class="prompt-body">{{TOOL_PROMPT_BODY}}</td>
                 </tr>
               </table>
             </td>
@@ -560,20 +534,20 @@ Aucune donnée nominative dans le rendu.</td>
           <tr>
             <td class="section-cream pad-x pad-stat" style="border-bottom:1px solid #E0D5C8;">
               <p class="kicker kicker-mute">Chiffre du marché</p>
-              <p class="stat-figure">63 %</p>
-              <p class="stat-title">des dirigeants ayant cédé leur PME en 2024 n&#39;ont toujours pas formalisé leur stratégie patrimoniale 9 mois plus tard</p>
-              <p class="stat-text">Ils restent en compte d'attente, sans interlocuteur structurant. <strong>Or 9 mois est précisément la fenêtre pendant laquelle ils prennent leurs décisions patrimoniales lourdes</strong> : remploi en immobilier locatif, donation aux enfants, holding, démembrement, assurance-vie. Le premier conseil mobilisé pendant cette fenêtre est presque toujours celui qui structure les 5 années suivantes.</p>
-              <p class="stat-source">Source : BPCE L&#39;Observatoire · Le marché de la cession-transmission des PME en France · édition 2025.</p>
+              <p class="stat-figure">{{STAT_FIGURE}}</p>
+              <p class="stat-title">{{STAT_TITLE}}</p>
+              <p class="stat-text">{{STAT_TEXT}}</p>
+              <p class="stat-source">{{STAT_SOURCE}}</p>
             </td>
           </tr>
 
           <!-- CTA · founder-led -->
           <tr>
             <td class="section-paper pad-x pad-cta">
-              <p class="cta-title">Et si vous receviez chaque vendredi la <em>liste des dirigeants de votre book</em> qui viennent d'apparaître sur BODACC ?</p>
-              <p class="cta-text">30 minutes avec moi pour voir si ça a du sens sur votre périmètre. Pas de pitch produit — on regarde votre book réel, on identifie les 3 NAF où vous concentrez le plus de dirigeants, et je vous montre la liste BODACC que vous auriez reçue ce mois-ci.</p>
-              <a class="cta-link" href="https://cal.com/mathisbaala/charlie-discovery">Réserver 30 minutes →</a>
-              <p class="cta-fallback">Ou répondez à ce mail — je lis chaque réponse personnellement.</p>
+              <p class="cta-title">{{CTA_TITLE}}</p>
+              <p class="cta-text">{{CTA_TEXT}}</p>
+              <a class="cta-link" href="{{CTA_URL}}">{{CTA_LABEL}}</a>
+              <p class="cta-fallback">{{CTA_FALLBACK}}</p>
 
               <table role="presentation" width="100%" class="sig-wrap">
                 <tr>
@@ -583,7 +557,7 @@ Aucune donnée nominative dans le rendu.</td>
                   <td valign="middle">
                     <p class="sig-name">Mathis Baala</p>
                     <p class="sig-role">Co-founder &amp; CEO · Charlie</p>
-                    <p class="sig-meta">Édition #17 · Intelligence Patrimoine · Semaine du 19–23 mai 2026</p>
+                    <p class="sig-meta">{{SIG_META}}</p>
                   </td>
                 </tr>
               </table>
