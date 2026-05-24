@@ -8,551 +8,194 @@
   <meta name="supported-color-schemes" content="light only">
   <title>{{META_TITLE}}</title>
   <!--
-    Charlie · Intelligence Patrimoine · template V2
+    Charlie · Intelligence Patrimoine · template V3
     Édition #{{EDITION_NUMBER}} — {{EDITION_DATE}}
     SUBJECT  : {{SUBJECT}}
     CAMPAIGN : {{CAMPAIGN}}
-    Variables PRENOM et UNSUBSCRIBE_URL sont injectées au moment de l'envoi
-    par scripts/send-newsletter.mjs — ne PAS les injecter au build.
+    Variables PRENOM et UNSUBSCRIBE_URL injectées à l'envoi par send-newsletter.mjs
   -->
   <style>
-    body, table, td, p, a, span, div { font-family: 'DM Sans', Arial, sans-serif; }
-    body { margin: 0; padding: 0; background: #E8E1D7; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    body, table, td, p, a, span { font-family: Arial, Helvetica, sans-serif; }
+    body { margin: 0; padding: 0; background: #EAE0D3; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     table { border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
     td { border-collapse: collapse; }
     img { border: 0; display: block; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
 
-    .container { width: 100%; max-width: 580px; background: #F7F3EC; border: 1px solid #CEC3B3; }
+    .preheader { display: none !important; visibility: hidden; mso-hide: all; opacity: 0; color: transparent; height: 0; width: 0; overflow: hidden; max-height: 0; max-width: 0; font-size: 1px; line-height: 1px; }
 
-    .section-paper  { background: #FFFEFB; }
-    .section-soft   { background: #F7F3EC; }
-    .section-cream  { background: #F2EDE5; }
-    .section-dark   { background: #100E0B; }
+    /* ── Container ── */
+    .container { width: 100%; max-width: 600px; background: #FDFAF6; }
 
-    .pad-x        { padding-left: 36px; padding-right: 36px; }
-    .pad-hook     { padding-top: 42px; padding-bottom: 36px; }
-    .pad-signal   { padding-top: 40px; padding-bottom: 42px; }
-    .pad-case     { padding-top: 36px; padding-bottom: 36px; }
-    .pad-tool     { padding-top: 36px; padding-bottom: 36px; }
-    .pad-stat     { padding-top: 32px; padding-bottom: 36px; }
-    .pad-cta      { padding-top: 40px; padding-bottom: 44px; }
-    .pad-footer   { padding: 18px 24px 22px; }
+    /* ── Padding helpers ── */
+    .px { padding-left: 40px; padding-right: 40px; }
 
-    .kicker {
-      font-size: 10px;
-      line-height: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #0E7A8A;
-      margin: 0 0 16px 0;
-    }
+    /* ── Edition bar ── */
+    .ed-bar { background: #F3EBE0; border-bottom: 1px solid #DDD4C6; padding-top: 14px; padding-bottom: 14px; }
+    .ed-num  { font-size: 10px; line-height: 1.4; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #9A8878; margin: 0 0 2px 0; }
+    .ed-tag  { font-size: 12px; line-height: 1.5; color: #5C5248; font-style: italic; margin: 0; }
 
-    .kicker-dim   { color: #C3B8A9; }
-    .kicker-mute  { color: #A09080; }
+    /* ── Hook ── */
+    .hook-section { background: #FDFAF6; border-bottom: 1px solid #EDE4D8; }
+    .kicker { font-size: 10px; line-height: 1.4; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #7B3318; margin: 0 0 14px 0; }
+    .hook-title { font-family: Georgia, 'Times New Roman', serif; font-size: 26px; line-height: 1.3; font-weight: 700; color: #1A1510; margin: 0 0 16px 0; letter-spacing: -0.3px; }
+    .hook-body { font-size: 15px; line-height: 1.76; color: #3D3630; margin: 0; }
+    .hook-body strong { color: #1A1510; font-weight: 600; }
 
-    .title {
-      margin: 0 0 16px 0;
-      font-size: 30px;
-      line-height: 1.22;
-      font-weight: 700;
-      color: #0D0B08;
-      letter-spacing: -0.2px;
-    }
+    /* ── Signal ── */
+    .signal-section { background: #F3EBE0; border-top: 1px solid #DDD4C6; border-bottom: 1px solid #DDD4C6; }
+    .signal-figure { font-family: Georgia, 'Times New Roman', serif; font-size: 54px; line-height: 1; font-weight: 700; color: #1A1510; margin: 0 0 4px 0; letter-spacing: -2px; }
+    .signal-unit { font-size: 11px; line-height: 1.5; color: #9A8878; letter-spacing: 0.3px; margin: 0 0 20px 0; }
+    .signal-title { font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.35; font-weight: 700; color: #1A1510; margin: 0 0 10px 0; }
+    .signal-text { font-size: 14px; line-height: 1.72; color: #3D3630; margin: 0; }
+    .signal-text + .signal-text { margin-top: 10px; }
+    .signal-text strong { color: #1A1510; font-weight: 600; }
+    .signal-source { font-size: 10px; line-height: 1.5; color: #ABA098; font-style: italic; margin: 12px 0 0 0; }
 
-    .body-text {
-      margin: 0;
-      font-size: 15.5px;
-      line-height: 1.74;
-      color: #3C3830;
-    }
+    /* ── Case ── */
+    .case-section { background: #FDFAF6; border-bottom: 1px solid #EDE4D8; }
+    .case-actor { font-size: 11.5px; line-height: 1.4; color: #9A8878; margin: 0 0 10px 0; }
+    .case-title { font-family: Georgia, 'Times New Roman', serif; font-size: 20px; line-height: 1.3; font-weight: 700; color: #1A1510; margin: 0 0 16px 0; }
+    .case-body { font-size: 14px; line-height: 1.72; color: #3D3630; margin: 0; }
+    .case-body strong { color: #1A1510; font-weight: 600; }
+    .case-result-num { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; line-height: 1.1; font-weight: 700; color: #7B3318; margin: 0 0 6px 0; }
+    .case-result-text { font-size: 13.5px; line-height: 1.62; color: #3D3630; margin: 0; }
+    .case-result-text strong { color: #1A1510; }
 
-    .body-gap     { margin-top: 14px; }
-    .body-text strong { color: #0D0B08; }
+    /* ── CTA ── */
+    .cta-section { background: #FDFAF6; }
+    .cta-title { font-family: Georgia, 'Times New Roman', serif; font-size: 20px; line-height: 1.35; font-weight: 700; color: #1A1510; margin: 0 0 12px 0; }
+    .cta-title em { color: #7B3318; font-style: italic; }
+    .cta-body { font-size: 14px; line-height: 1.7; color: #3D3630; margin: 0 0 24px 0; }
+    .cta-btn { display: block; text-align: center; background: #7B3318; color: #FFFFFF !important; text-decoration: none; font-size: 14px; font-weight: 700; line-height: 1; padding: 17px 24px; letter-spacing: 0.3px; border-radius: 6px; }
+    .cta-fallback { font-size: 12.5px; line-height: 1.6; color: #9A8878; text-align: center; font-style: italic; margin: 14px 0 0 0; }
 
-    /* ============ HEADER ============ */
-    .edition-bar {
-      background: #0D3558;
-      padding: 12px 28px;
-    }
-    .edition-bar-num {
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 11px;
-      line-height: 1.4;
-      font-weight: 700;
-      color: #4BBDCE;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin: 0;
-    }
-    .edition-bar-tag {
-      margin: 4px 0 0 0;
-      font-size: 12px;
-      line-height: 1.45;
-      color: #DCE7F0;
-    }
+    /* ── Signature ── */
+    .sig-photo { width: 52px; height: 52px; border-radius: 26px; }
+    .sig-name { font-family: Georgia, 'Times New Roman', serif; font-size: 14.5px; line-height: 1.3; font-weight: 700; color: #1A1510; margin: 0; }
+    .sig-role { font-size: 12px; line-height: 1.45; color: #6A6055; margin: 2px 0 0 0; }
+    .sig-meta { font-size: 10.5px; line-height: 1.4; color: #ABA098; font-style: italic; margin: 5px 0 0 0; }
 
-    /* ============ SIGNAL (dark block) ============ */
-    .signal-figure {
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 44px;
-      line-height: 1.05;
-      font-weight: 700;
-      color: #4BBDCE;
-      letter-spacing: -0.5px;
-      margin: 0;
-    }
-    .signal-unit {
-      margin: 8px 0 0 0;
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 11px;
-      line-height: 1.55;
-      color: #8F8375;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    .signal-title {
-      margin: 22px 0 14px 0;
-      font-size: 22px;
-      line-height: 1.28;
-      font-weight: 700;
-      color: #FAF6EE;
-      letter-spacing: -0.1px;
-    }
-    .signal-text {
-      margin: 0;
-      font-size: 14.5px;
-      line-height: 1.72;
-      color: #C3B8A9;
-    }
-    .signal-text strong { color: #FAF6EE; font-weight: 600; }
-    .signal-text + .signal-text { margin-top: 12px; }
-    .signal-action {
-      margin: 18px 0 0 0;
-      padding: 12px 14px;
-      border-left: 3px solid #4BBDCE;
-      background: #18140F;
-      font-size: 13.5px;
-      line-height: 1.6;
-      color: #4BBDCE;
-      font-weight: 600;
-    }
-    .signal-source {
-      margin: 14px 0 0 0;
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 10px;
-      line-height: 1.5;
-      color: #6E6358;
-      letter-spacing: 0.3px;
-    }
+    /* ── Footer ── */
+    .footer-section { background: #E4D9CC; border-top: 1px solid #D4C9BC; }
+    .footer-text { font-size: 10.5px; line-height: 1.8; text-align: center; color: #9A8878; margin: 0; }
+    .footer-text a { color: #6A6055 !important; text-decoration: underline; text-underline-offset: 2px; }
 
-    /* ============ CASE (3 actes) ============ */
-    .case-meta {
-      margin: 0 0 8px 0;
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 10.5px;
-      line-height: 1.4;
-      color: #8A7E74;
-      letter-spacing: 0.4px;
-    }
-    .case-title {
-      margin: 0 0 24px 0;
-      font-size: 22px;
-      line-height: 1.28;
-      font-weight: 700;
-      color: #0D0B08;
-      letter-spacing: -0.1px;
-    }
-    .case-act-table {
-      border-top: 1px solid #E6DDD2;
-    }
-    .case-act-row td {
-      padding: 18px 0;
-      border-bottom: 1px solid #E6DDD2;
-      vertical-align: top;
-    }
-    .case-act-num {
-      width: 76px;
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 10px;
-      line-height: 1.4;
-      font-weight: 700;
-      color: #0E7A8A;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      padding-right: 8px !important;
-    }
-    .case-act-body {
-      font-size: 14.5px;
-      line-height: 1.7;
-      color: #3C3830;
-      margin: 0;
-    }
-    .case-act-body strong { color: #0D0B08; }
-    .case-result {
-      margin-top: 22px;
-      padding: 18px 20px;
-      background: #F7F3EC;
-      border: 1px solid #DAD1C5;
-      border-left: 3px solid #0E7A8A;
-    }
-    .case-result-figure {
-      margin: 0;
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 28px;
-      line-height: 1.1;
-      font-weight: 700;
-      color: #0E7A8A;
-      letter-spacing: -0.3px;
-    }
-    .case-result-text {
-      margin: 8px 0 0 0;
-      font-size: 14px;
-      line-height: 1.6;
-      color: #3C3830;
-    }
-    .case-result-text strong { color: #0D0B08; }
-
-    /* ============ TOOL (prompt card) ============ */
-    .tool-title {
-      margin: 0 0 12px 0;
-      font-size: 22px;
-      line-height: 1.28;
-      font-weight: 700;
-      color: #0D0B08;
-      letter-spacing: -0.1px;
-    }
-    .tool-text {
-      margin: 0 0 20px 0;
-      font-size: 14.5px;
-      line-height: 1.7;
-      color: #3C3830;
-    }
-    .tool-text strong { color: #0D0B08; }
-
-    .prompt-card {
-      border: 1px solid #1E1A15;
-      background: #100E0B;
-    }
-    .prompt-header {
-      border-bottom: 1px solid #24201A;
-      padding: 12px 20px;
-    }
-    .prompt-label {
-      margin: 0;
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 10px;
-      line-height: 1.4;
-      font-weight: 500;
-      color: #9A8F83;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-    }
-    .prompt-hint {
-      margin: 4px 0 0 0;
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 10px;
-      line-height: 1.4;
-      color: #7A7066;
-    }
-    .prompt-body {
-      padding: 20px 20px 22px;
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 12px;
-      line-height: 1.85;
-      color: #C3B8A9;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-    .hl  { color: #4BBDCE; font-weight: 500; }
-    .dim { color: #8F8375; font-style: italic; }
-
-    /* ============ STAT (cream block) ============ */
-    .stat-figure {
-      margin: 0;
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 44px;
-      line-height: 1.05;
-      font-weight: 700;
-      color: #0E7A8A;
-      letter-spacing: -0.5px;
-    }
-    .stat-title {
-      margin: 12px 0 12px 0;
-      font-size: 18px;
-      line-height: 1.32;
-      font-weight: 600;
-      color: #0D0B08;
-      letter-spacing: -0.1px;
-    }
-    .stat-text {
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.68;
-      color: #3C3830;
-    }
-    .stat-text strong { color: #0D0B08; }
-    .stat-source {
-      margin: 12px 0 0 0;
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 10px;
-      line-height: 1.5;
-      color: #8A7E74;
-      letter-spacing: 0.3px;
-    }
-
-    /* ============ CTA ============ */
-    .cta-title {
-      margin: 0 0 16px 0;
-      font-size: 22px;
-      line-height: 1.32;
-      font-weight: 700;
-      color: #0D0B08;
-      letter-spacing: -0.15px;
-    }
-    .cta-title em {
-      color: #0E7A8A;
-      font-style: italic;
-      font-weight: 700;
-    }
-    .cta-text {
-      margin: 0 0 22px 0;
-      font-size: 14.5px;
-      line-height: 1.7;
-      color: #3C3830;
-    }
-    .cta-link {
-      display: block;
-      text-align: center;
-      background: #0E7A8A;
-      color: #FFFFFF !important;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1;
-      padding: 15px 18px;
-      border-radius: 10px;
-    }
-    .cta-fallback {
-      margin: 16px 0 0 0;
-      font-size: 13px;
-      line-height: 1.55;
-      color: #6A6055;
-      text-align: center;
-    }
-
-    /* ============ SIGNATURE ============ */
-    .sig-wrap {
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid #E6DDD2;
-    }
-    .sig-photo {
-      width: 56px;
-      height: 56px;
-      border-radius: 28px;
-      display: block;
-    }
-    .sig-name {
-      margin: 0;
-      font-size: 15px;
-      line-height: 1.35;
-      font-weight: 700;
-      color: #0D0B08;
-    }
-    .sig-role {
-      margin: 2px 0 0 0;
-      font-size: 12.5px;
-      line-height: 1.45;
-      color: #6A6055;
-    }
-    .sig-meta {
-      margin: 6px 0 0 0;
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 10px;
-      line-height: 1.4;
-      color: #A09080;
-      letter-spacing: 0.3px;
-    }
-
-    /* ============ FOOTER ============ */
-    .footer {
-      background: #EDE6DC;
-      border-top: 1px solid #D0C4B4;
-    }
-    .footer-text {
-      margin: 0;
-      font-size: 10.5px;
-      line-height: 1.8;
-      text-align: center;
-      color: #A09080;
-    }
-    .footer-text a {
-      color: #7A6E64 !important;
-      text-decoration: underline;
-      text-decoration-color: #B9AFA4;
-      text-underline-offset: 2px;
-    }
-
-    /* ============ PRÉHEADER (invisible) ============ */
-    .preheader {
-      display: none !important;
-      visibility: hidden;
-      mso-hide: all;
-      opacity: 0;
-      color: transparent;
-      height: 0;
-      width: 0;
-      overflow: hidden;
-      max-height: 0;
-      max-width: 0;
-      font-size: 1px;
-      line-height: 1px;
-    }
-
-    @media only screen and (max-width: 620px) {
-      .outer-pad  { padding: 0 0 16px !important; }
-      .container  { border-left: 0 !important; border-right: 0 !important; border-radius: 0 !important; }
-      .pad-x      { padding-left: 18px !important; padding-right: 18px !important; }
-      .pad-hook   { padding-top: 28px !important; padding-bottom: 24px !important; }
-      .pad-signal { padding-top: 28px !important; padding-bottom: 30px !important; }
-      .pad-case   { padding-top: 24px !important; padding-bottom: 26px !important; }
-      .pad-tool   { padding-top: 24px !important; padding-bottom: 26px !important; }
-      .pad-stat   { padding-top: 22px !important; padding-bottom: 26px !important; }
-      .pad-cta    { padding-top: 28px !important; padding-bottom: 32px !important; }
-      .pad-footer { padding: 16px 18px 20px !important; }
-      .edition-bar { padding-left: 18px !important; padding-right: 18px !important; }
-      .title       { font-size: 22px !important; line-height: 1.28 !important; }
-      .body-text   { font-size: 15px !important; }
-      .signal-figure, .stat-figure { font-size: 34px !important; }
-      .signal-title, .case-title, .tool-title, .cta-title { font-size: 18px !important; line-height: 1.32 !important; }
-      .signal-text, .case-act-body, .tool-text, .cta-text { font-size: 14px !important; line-height: 1.68 !important; }
-      .case-result-figure { font-size: 22px !important; }
-      .case-act-num { width: 58px !important; font-size: 9.5px !important; }
-      .prompt-body { font-size: 11px !important; padding: 14px 14px 16px !important; line-height: 1.75 !important; }
-      .cta-link    { padding: 17px 14px !important; font-size: 16px !important; min-height: 48px !important; }
-      .footer-text { font-size: 10px !important; }
-      .footer-text a { overflow-wrap: anywhere !important; word-break: break-word !important; }
-      .sig-photo   { width: 48px !important; height: 48px !important; border-radius: 24px !important; }
+    /* ── Mobile ── */
+    @media only screen and (max-width: 640px) {
+      .outer-td   { padding: 0 !important; }
+      .container  { border-radius: 0 !important; }
+      .px         { padding-left: 20px !important; padding-right: 20px !important; }
+      .hook-title { font-size: 22px !important; }
+      .signal-figure { font-size: 42px !important; }
+      .case-title, .cta-title { font-size: 18px !important; }
+      .cta-btn    { padding: 18px 20px !important; font-size: 15px !important; min-height: 48px !important; }
     }
   </style>
 </head>
 <body>
   <div class="preheader">{{PREHEADER}}</div>
-  <table role="presentation" width="100%" bgcolor="#E8E1D7">
+
+  <table role="presentation" width="100%" bgcolor="#EAE0D3">
     <tr>
-      <td align="center" class="outer-pad" style="padding: 48px 16px;">
+      <td align="center" class="outer-td" style="padding: 40px 16px;">
         <!--[if mso]>
-        <table role="presentation" width="580" align="center" cellpadding="0" cellspacing="0" border="0">
-          <tr>
-            <td>
+        <table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+          <tr><td>
         <![endif]-->
-        <table role="presentation" class="container" width="100%" style="max-width:580px;">
+        <table role="presentation" class="container" width="100%" style="max-width:600px;">
 
-          <!-- HEADER · banner -->
+          <!-- BANNIÈRE -->
           <tr>
-            <td style="background:#F4EDE4; border-bottom:1px solid #E6DDD2; line-height:0; font-size:0;">
-              <img src="./banner-charlie-newsletter.jpg" width="580" alt="Charlie · Intelligence Patrimoine" style="width:100%; max-width:580px; height:auto; display:block;">
+            <td style="line-height:0; font-size:0; background:#F3EBE0;">
+              <img src="./banner-charlie-newsletter.jpg" width="600" alt="Charlie · Intelligence Patrimoine" style="width:100%; max-width:600px; height:auto; display:block;">
             </td>
           </tr>
 
-          <!-- HEADER · edition bar -->
+          <!-- IDENTITÉ ÉDITION -->
           <tr>
-            <td class="edition-bar">
-              <p class="edition-bar-num">Intelligence Patrimoine · Édition #{{EDITION_NUMBER}} · {{EDITION_DATE}}</p>
-              <p class="edition-bar-tag">{{EDITION_TAGLINE}}</p>
+            <td class="ed-bar px">
+              <p class="ed-num">Intelligence Patrimoine · Édition #{{EDITION_NUMBER}} · {{EDITION_DATE}}</p>
+              <p class="ed-tag">{{EDITION_TAGLINE}}</p>
             </td>
           </tr>
 
-          <!-- 1. HOOK -->
+          <!-- 1 · HOOK -->
           <tr>
-            <td class="section-paper pad-x pad-hook" style="border-bottom:1px solid #E6DDD2;">
+            <td class="hook-section px" style="padding-top:40px; padding-bottom:36px;">
               <p class="kicker">Cette semaine</p>
-              <p class="title">{{HOOK_TITLE}}</p>
-              <p class="body-text">{{HOOK_BODY}}</p>
+              <p class="hook-title">{{HOOK_TITLE}}</p>
+              <p class="hook-body">{{HOOK_BODY}}</p>
             </td>
           </tr>
 
-          <!-- 2. SIGNAL · bloc dark -->
+          <!-- 2 · SIGNAL -->
           <tr>
-            <td class="section-dark pad-x pad-signal">
-              <p class="kicker kicker-dim">Signal propriétaire</p>
+            <td class="signal-section px" style="padding-top:36px; padding-bottom:36px;">
+              <p class="kicker">Le signal</p>
               <p class="signal-figure">{{SIGNAL_FIGURE}}</p>
               <p class="signal-unit">{{SIGNAL_UNIT}}</p>
               <p class="signal-title">{{SIGNAL_TITLE}}</p>
               <p class="signal-text">{{SIGNAL_TEXT_1}}</p>
               <p class="signal-text">{{SIGNAL_TEXT_2}}</p>
-              <p class="signal-action">{{SIGNAL_ACTION}}</p>
+
+              <!-- Appel à l'action inline -->
+              <table role="presentation" width="100%" style="margin-top:18px;">
+                <tr>
+                  <td width="3" bgcolor="#7B3318" style="background:#7B3318; font-size:0; line-height:0;">&nbsp;</td>
+                  <td style="padding:12px 16px; background:#FDF6EE;">
+                    <p style="margin:0; font-size:13.5px; line-height:1.6; color:#7B3318; font-weight:600;">{{SIGNAL_ACTION}}</p>
+                  </td>
+                </tr>
+              </table>
+
               <p class="signal-source">{{SIGNAL_SOURCE}}</p>
             </td>
           </tr>
 
-          <!-- 3. CAS · papier · 3 actes -->
+          <!-- 3 · CAS TERRAIN -->
           <tr>
-            <td class="section-paper pad-x pad-case" style="border-bottom:1px solid #E6DDD2;">
+            <td class="case-section px" style="padding-top:36px; padding-bottom:36px;">
               <p class="kicker">Sur le terrain</p>
-              <p class="case-meta">{{CASE_ACTOR}}</p>
+              <p class="case-actor">{{CASE_ACTOR}}</p>
               <p class="case-title">{{CASE_TITLE}}</p>
-              <table role="presentation" width="100%" class="case-act-table">
-                <tr class="case-act-row">
-                  <td class="case-act-num">01 / Déclencheur</td>
-                  <td><p class="case-act-body">{{CASE_TRIGGER}}</p></td>
-                </tr>
-                <tr class="case-act-row">
-                  <td class="case-act-num">02 / Action</td>
-                  <td><p class="case-act-body">{{CASE_ACTION}}</p></td>
-                </tr>
-              </table>
-              <div class="case-result">
-                <p class="case-result-figure">{{CASE_RESULT_FIGURE}}</p>
-                <p class="case-result-text">{{CASE_RESULT_TEXT}}</p>
-              </div>
-            </td>
-          </tr>
+              <p class="case-body">{{CASE_TRIGGER}}</p>
+              <p class="case-body" style="margin-top:12px;">{{CASE_ACTION}}</p>
 
-          <!-- 4. OUTIL · sable + prompt-card -->
-          <tr>
-            <td class="section-soft pad-x pad-tool" style="border-bottom:1px solid #E6DDD2;">
-              <p class="kicker">Outil tactique · 48h</p>
-              <p class="tool-title">{{TOOL_TITLE}}</p>
-              <p class="tool-text">{{TOOL_TEXT}}</p>
-              <table role="presentation" width="100%" class="prompt-card">
+              <!-- Résultat -->
+              <table role="presentation" width="100%" style="margin-top:22px;">
                 <tr>
-                  <td class="prompt-header">
-                    <p class="prompt-label">{{TOOL_PROMPT_LABEL}}</p>
-                    <p class="prompt-hint">{{TOOL_PROMPT_HINT}}</p>
+                  <td width="3" bgcolor="#7B3318" style="background:#7B3318; font-size:0; line-height:0;">&nbsp;</td>
+                  <td style="padding:16px 20px; background:#F3EBE0;">
+                    <p class="case-result-num">{{CASE_RESULT_FIGURE}}</p>
+                    <p class="case-result-text">{{CASE_RESULT_TEXT}}</p>
                   </td>
                 </tr>
-                <tr>
-                  <td class="prompt-body">{{TOOL_PROMPT_BODY}}</td>
-                </tr>
               </table>
             </td>
           </tr>
 
-          <!-- 5. CHIFFRE · cream -->
+          <!-- 4 · CTA -->
           <tr>
-            <td class="section-cream pad-x pad-stat" style="border-bottom:1px solid #E0D5C8;">
-              <p class="kicker kicker-mute">Chiffre du marché</p>
-              <p class="stat-figure">{{STAT_FIGURE}}</p>
-              <p class="stat-title">{{STAT_TITLE}}</p>
-              <p class="stat-text">{{STAT_TEXT}}</p>
-              <p class="stat-source">{{STAT_SOURCE}}</p>
-            </td>
-          </tr>
-
-          <!-- CTA · founder-led -->
-          <tr>
-            <td class="section-paper pad-x pad-cta">
+            <td class="cta-section px" style="padding-top:36px; padding-bottom:44px; border-top:1px solid #EDE4D8;">
               <p class="cta-title">{{CTA_TITLE}}</p>
-              <p class="cta-text">{{CTA_TEXT}}</p>
-              <a class="cta-link" href="{{CTA_URL}}">{{CTA_LABEL}}</a>
+              <p class="cta-body">{{CTA_TEXT}}</p>
+
+              <!-- Bouton -->
+              <table role="presentation" width="100%">
+                <tr>
+                  <td align="center">
+                    <a class="cta-btn" href="{{CTA_URL}}" style="max-width:300px; display:inline-block;">{{CTA_LABEL}}</a>
+                  </td>
+                </tr>
+              </table>
+
               <p class="cta-fallback">{{CTA_FALLBACK}}</p>
 
-              <table role="presentation" width="100%" class="sig-wrap">
+              <!-- Signature -->
+              <table role="presentation" width="100%" style="margin-top:32px; padding-top:24px; border-top:1px solid #EDE4D8;">
                 <tr>
-                  <td width="72" valign="top" style="padding-right:14px;">
-                    <img class="sig-photo" src="./mathis-baala.jpg" width="56" height="56" alt="Mathis Baala">
+                  <td width="68" valign="top" style="padding-right:14px;">
+                    <img class="sig-photo" src="./mathis-baala.jpg" width="52" height="52" alt="Mathis Baala">
                   </td>
                   <td valign="middle">
                     <p class="sig-name">Mathis Baala</p>
@@ -566,7 +209,7 @@
 
           <!-- FOOTER -->
           <tr>
-            <td class="footer pad-footer">
+            <td class="footer-section" style="padding:18px 24px 22px;">
               <p class="footer-text">
                 Vous recevez Intelligence Patrimoine car vous vous êtes inscrit sur charliefinancialadvisor.com.<br>
                 <a href="{{UNSUBSCRIBE_URL}}">Se désabonner</a>
@@ -575,10 +218,10 @@
               </p>
             </td>
           </tr>
+
         </table>
         <!--[if mso]>
-            </td>
-          </tr>
+          </td></tr>
         </table>
         <![endif]-->
       </td>
