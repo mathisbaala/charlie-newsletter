@@ -31,6 +31,7 @@ import process from 'node:process';
 const RUNTIME_VARS = new Set(['PRENOM', 'UNSUBSCRIBE_URL']);
 
 const HTML_RAW_VARS = new Set([
+  // V3 legacy
   'HOOK_BODY',
   'SIGNAL_TEXT_1',
   'SIGNAL_TEXT_2',
@@ -42,10 +43,24 @@ const HTML_RAW_VARS = new Set([
   'STAT_TEXT',
   'CTA_TITLE',
   'CTA_TEXT',
-  'CTA_FALLBACK'
+  'CTA_FALLBACK',
+  // V4 Éditorial — corps pouvant contenir <strong>, <em>
+  'S1_BODY', 'S1_LEAD',
+  'S2_BODY', 'S2_LEAD', 'S2_B1', 'S2_B2', 'S2_B3',
+  'S3_BODY', 'S3_LEAD', 'S3_QUOTE',
+  'S3_B1', 'S3_B2', 'S3_B3',
+  'S4_LEAD', 'S4_STEP_1', 'S4_STEP_2', 'S4_STEP_3', 'S4_STEP_4',
+  'TOOL_PITCH'
 ]);
 
-const URL_VARS = new Set(['CTA_URL']);
+const URL_VARS = new Set([
+  'CTA_URL',
+  'HERO_URL',
+  'TOOL_LOGO_URL',
+  'TOOL_LINK_URL',
+  'WEBVIEW_URL',
+  'PREFERENCES_URL',
+]);
 
 const VAR_PATTERN = /\{\{([A-Z][A-Z0-9_]*)\}\}/g;
 
@@ -102,7 +117,7 @@ function escapeAttr(value) {
 
 function isSafeUrl(value) {
   const v = String(value).trim();
-  if (!v) return false;
+  if (!v) return true; // URL vide = autorisée (img/href sans src)
   if (/^javascript:/i.test(v)) return false;
   if (/^data:/i.test(v)) return false;
   if (/^vbscript:/i.test(v)) return false;

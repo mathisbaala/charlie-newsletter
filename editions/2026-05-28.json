@@ -1,0 +1,63 @@
+{
+  "SUBJECT": "Automatiser la préparation de vos rendez-vous clients",
+  "CAMPAIGN": "charlie_2026_05_28_editorial_01_prep_rdv",
+  "PREHEADER": "Un brief client en 90 secondes. Les 3 ingrédients pour automatiser vos rendez-vous cette semaine.",
+  "META_TITLE": "Charlie · Intelligence Patrimoine №4 — Automatiser vos rendez-vous",
+
+  "EDITION_NUMBER": "4",
+  "EDITION_DATE": "LUNDI 25 MAI 2026",
+
+  "EYEBROW": "La newsletter de la semaine",
+  "TITLE_LEAD": "Automatiser la préparation de vos",
+  "TITLE_ACCENT": "rendez-vous",
+  "TITLE_TAIL": "clients.",
+  "TAGLINE": "Chaque lundi, l'intelligence artificielle appliquée au métier de CGP.",
+  "READTIME": "3 min de lecture",
+
+  "HERO_URL": "https://www.charliefinancialadvisor.com/newsletter/hero-42.jpg",
+  "HERO_ALT": "Illustration éditoriale — préparation de rendez-vous client",
+
+  "S1_TITLE": "Vous perdez 4 heures par semaine à préparer vos rendez-vous.",
+  "S1_LEAD": "Relire les comptes rendus, agréger les positions du contrat d'assurance-vie, vérifier la dernière interaction email, retrouver le bilan patrimonial de l'an dernier.",
+  "S1_BODY": "Avant chaque rendez-vous, c'est le même rituel : 35 à 45 minutes pour reconstituer le contexte. Multiplié par 8 rendez-vous hebdomadaires, c'est ½ journée qui s'évapore, sans qu'aucune valeur ne soit créée pour le client.",
+
+  "S2_TITLE": "Un brief client généré en 90 secondes.",
+  "S2_LEAD": "Connectez votre CRM (Harvest, O2S, Manymore) à un agent IA qui synthétise, à la demande, un dossier complet de rendez-vous.",
+  "S2_BODY": "Historique des échanges, allocation actuelle, alertes fiscales en cours, sujets ouverts, recommandations à valider. L'agent travaille à partir de vos propres données et reste dans votre environnement : rien ne sort, rien n'est partagé.",
+  "S3_TITLE": "L'architecture complète, couche par couche.",
+  "S3_LEAD": "Comment câbler le système pour qu'il tourne sans friction à chaque rendez-vous.",
+  "S3_BODY": "Il y a 3 couches à construire. La première fois, comptez 2 heures. Ensuite, le brief se génère en moins de 5 minutes par client.",
+  "S3_B1": "<strong>Couche 1 : standardiser vos exports CRM.</strong> Dans O2S, Harvest ou Manymore, créez un modèle de rapport que vous réutilisez à chaque fois : mêmes champs, même structure. Un export cohérent produit un brief cohérent.",
+  "S3_B2": "<strong>Couche 2 : construire votre prompt maître dans Claude Projects.</strong> Créez un Project « Briefs RDV » avec des instructions précises : 5 sections souhaitées, alertes fiscales à signaler, format de sortie, niveau de détail. Ce prompt s'affine à chaque utilisation.",
+  "S3_B3": "<strong>Couche 3 : automatiser le déclenchement.</strong> D'abord à la main, la veille de chaque rendez-vous. Puis avec Make ou Zapier : un événement dans votre agenda déclenche l'export CRM et envoie le brief par email. Une après-midi de paramétrage pour certains cabinets.",
+
+  "S3_M1_VAL": "−85",
+  "S3_M1_UNIT": "%",
+  "S3_M1_LABEL": "temps de préparation",
+  "S3_M2_VAL": "480",
+  "S3_M2_UNIT": "h",
+  "S3_M2_LABEL": "récupérées par an",
+  "S3_M3_VAL": "+22",
+  "S3_M3_UNIT": "%",
+  "S3_M3_LABEL": "RDV transformés",
+  "S3_QUOTE": "On ne se demande plus si on a oublié quelque chose avant un rendez-vous. L'agent l'a déjà vérifié.",
+  "S3_QUOTE_AUTHOR": "Camille",
+  "S3_QUOTE_ROLE": "Associée Fondatrice",
+
+  "S4_TITLE": "15 minutes, cette semaine.",
+  "S4_LEAD": "Un test simple, sans installation, à reproduire avec n'importe quel client.",
+  "S4_STEP_1": "Exportez le CSV de vos 5 prochains rendez-vous depuis votre CRM.",
+  "S4_STEP_2": "Ouvrez Claude (ou ChatGPT) et collez le contexte de l'un d'entre eux.",
+  "S4_STEP_3": "Demandez : « Génère-moi un brief de RDV en 5 points : situation, alertes, opportunités, sujets ouverts, questions à poser. »",
+  "S4_STEP_4": "Comparez à votre préparation habituelle. Mesurez le temps gagné.",
+  "CTA_TEXT": "Tester l'outil de la semaine",
+  "CTA_URL": "https://granola.ai",
+
+  "TOOL_LOGO_URL": "https://www.charliefinancialadvisor.com/newsletter/granola-logo.jpg",
+  "TOOL_NAME": "Granola",
+  "TOOL_LINK_TEXT": "granola.ai",
+  "TOOL_LINK_URL": "https://granola.ai",
+  "TOOL_PITCH": "Prend des notes pendant vos visios, sans bot intrusif. Synthèse et liste d'actions livrées à la fin du rendez-vous. Vous ne rédigez plus un compte rendu à la main.",
+
+  "WEBVIEW_URL": "https://www.charliefinancialadvisor.com/newsletter/42.html"
+}
