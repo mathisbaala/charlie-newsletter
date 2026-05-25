@@ -546,12 +546,9 @@ async function main() {
     return;
   }
 
-  const subjectHasFirstName = args.subject.includes('{{PRENOM}}');
-
   function resolveSubject(email) {
-    if (!subjectHasFirstName) return args.subject;
-    const firstName = firstNameByEmail.get(email) || firstNameFallback;
-    return args.subject.replace(/\{\{PRENOM\}\}/g, firstName);
+    const firstName = (firstNameByEmail.get(email) || firstNameFallback || '').trim();
+    return firstName ? `${firstName}, ${args.subject}` : args.subject;
   }
 
   function resolveHtml(email) {
