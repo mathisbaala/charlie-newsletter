@@ -578,6 +578,7 @@ async function main() {
       console.log('[newsletter] personalization active: switching to single-send mode (no batch).');
     }
 
+    const SEND_DELAY_MS = 250; // 4 req/s — Resend limit is 5/s
     for (let i = 0; i < recipients.length; i += 1) {
       const email = recipients[i];
       const { error } = await resend.emails.send({
@@ -595,6 +596,7 @@ async function main() {
       }
 
       console.log(`[newsletter] sent ${i + 1}/${recipients.length} (${email})`);
+      if (i < recipients.length - 1) await new Promise(r => setTimeout(r, SEND_DELAY_MS));
     }
   } else {
     const groups = chunk(recipients, args.batchSize);
