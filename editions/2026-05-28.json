@@ -27,9 +27,9 @@
   "S3_TITLE": "L'architecture complète, couche par couche.",
   "S3_LEAD": "Comment câbler le système pour qu'il tourne sans friction à chaque rendez-vous.",
   "S3_BODY": "Il y a 3 couches à construire. La première fois, comptez 2 heures. Ensuite, le brief se génère en moins de 5 minutes par client.",
-  "S3_B1": "<strong>Couche 1 : standardiser vos exports CRM.</strong> Dans O2S, Harvest ou Manymore, créez un modèle de rapport que vous réutilisez à chaque fois : mêmes champs, même structure. Un export cohérent produit un brief cohérent.",
-  "S3_B2": "<strong>Couche 2 : construire votre prompt maître dans Claude Projects.</strong> Créez un Project « Briefs RDV » avec des instructions précises : 5 sections souhaitées, alertes fiscales à signaler, format de sortie, niveau de détail. Ce prompt s'affine à chaque utilisation.",
-  "S3_B3": "<strong>Couche 3 : automatiser le déclenchement.</strong> D'abord à la main, la veille de chaque rendez-vous. Puis avec Make ou Zapier : un événement dans votre agenda déclenche l'export CRM et envoie le brief par email. Une après-midi de paramétrage pour certains cabinets.",
+  "S3_B1": "<strong>Standardiser vos exports CRM.</strong> Dans O2S, Harvest ou Manymore, créez un modèle de rapport que vous réutilisez à chaque fois : mêmes champs, même structure. Un export cohérent produit un brief cohérent.",
+  "S3_B2": "<strong>Construire votre prompt maître dans Claude Projects.</strong> Créez un Project « Briefs RDV » avec des instructions précises : 5 sections souhaitées, alertes fiscales à signaler, format de sortie, niveau de détail. Ce prompt s'affine à chaque utilisation.",
+  "S3_B3": "<strong>Automatiser le déclenchement.</strong> D'abord à la main, la veille de chaque rendez-vous. Puis avec Make ou Zapier : un événement dans votre agenda déclenche l'export CRM et envoie le brief par email. Une après-midi de paramétrage pour certains cabinets.",
 
   "S3_M1_VAL": "−85",
   "S3_M1_UNIT": "%",
