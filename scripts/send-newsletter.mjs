@@ -546,6 +546,14 @@ async function main() {
     return;
   }
 
+  const subjectHasFirstName = args.subject.includes('{{PRENOM}}');
+
+  function resolveSubject(email) {
+    if (!subjectHasFirstName) return args.subject;
+    const firstName = firstNameByEmail.get(email) || firstNameFallback;
+    return args.subject.replace(/\{\{PRENOM\}\}/g, firstName);
+  }
+
   function resolveHtml(email) {
     if (!hasPersonalization) return html;
     let result = html;
@@ -579,7 +587,7 @@ async function main() {
         from: fromEmail,
         reply_to: replyToEmail,
         to: email,
-        subject: args.subject,
+        subject: resolveSubject(email),
         html: resolveHtml(email),
         ...(inlineAttachments.length > 0 ? { attachments: inlineAttachments } : {}),
         tags: resendTags
