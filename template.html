@@ -22,28 +22,28 @@
   <style>
     /* ── Design tokens ── */
     :root {
-      --paper:      #F5EFE6;
-      --paper-warm: #EBE2D2;
-      --ink:        #1F1814;
-      --ink-soft:   #7A6A58;
-      --ink-faint:  #B2A593;
-      --accent:     #B5683A;
-      --sand:       #D9C8B0;
-      --sand-soft:  #E8DDC9;
-      --rule:       rgba(31,24,20,.10);
-      --rule-soft:  rgba(31,24,20,.06);
+      --paper:      #FCFAF4;
+      --paper-warm: #F4EFE4;
+      --ink:        #2B2722;
+      --ink-soft:   #857D72;
+      --ink-faint:  #ADA79E;
+      --accent:     #9A4222;
+      --sand:       #E2DACB;
+      --sand-soft:  #EFEAE0;
+      --rule:       rgba(43,39,34,.10);
+      --rule-soft:  rgba(43,39,34,.06);
       --font-display: "DM Serif Display", Georgia, "Times New Roman", serif;
       --font-body:    "Inter", system-ui, -apple-system, Helvetica, Arial, sans-serif;
       --font-mono:    "JetBrains Mono", ui-monospace, "Courier New", Courier, monospace;
       --font-script:  "Homemade Apple", "Caveat", cursive;
     }
-    .palette-sand  { --paper:#EFE6D6; --paper-warm:#E4D7BF; --ink:#2A1F15; --ink-soft:#7B6849; --ink-faint:#B7A483; --accent:#8B4A2B; --sand:#D2BD98; --sand-soft:#E0CFAF; }
-    .palette-bone  { --paper:#FAF6EE; --paper-warm:#F0E9DA; --ink:#241C16; --ink-soft:#7A6856; --ink-faint:#B0A28E; --accent:#9C5430; --sand:#DECCB1; --sand-soft:#EDE0C9; }
-    .palette-mocha { --paper:#F2EAD8; --paper-warm:#E5D9BE; --ink:#1A130D; --ink-soft:#6E5A40; --ink-faint:#A89578; --accent:#6B3B1F; --sand:#C7B18B; --sand-soft:#DCC9A6; }
+    .palette-sand  { --paper:#F4EFE4; --paper-warm:#ECE5D6; --ink:#2B2722; --ink-soft:#857D72; --ink-faint:#ADA79E; --accent:#8A3A1E; --sand:#E2DACB; --sand-soft:#EFEAE0; }
+    .palette-bone  { --paper:#FFFEFB; --paper-warm:#F4EFE4; --ink:#2B2722; --ink-soft:#857D72; --ink-faint:#ADA79E; --accent:#9A4222; --sand:#E2DACB; --sand-soft:#EFEAE0; }
+    .palette-mocha { --paper:#F4EFE4; --paper-warm:#E8E0D2; --ink:#211D19; --ink-soft:#7C746A; --ink-faint:#A39B90; --accent:#7A3219; --sand:#DDD3C2; --sand-soft:#EAE3D6; }
 
     /* ── Reset ── */
     body, table, td, p, a, span { font-family: "Inter", Helvetica, Arial, sans-serif; }
-    body { margin: 0; padding: 0; background-color: #EBE2D2; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    body { margin: 0; padding: 0; background-color: #F4EFE4; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     table { border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
     td { border-collapse: collapse; }
     img { border: 0; display: block; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
@@ -59,15 +59,15 @@
       font-family: "DM Serif Display", Georgia, "Times New Roman", serif;
       font-size: 68px; line-height: 0.85;
       float: left; padding-right: 10px; padding-top: 6px;
-      color: #B5683A;
+      color: #9A4222;
     }
 
     /* ── CTA hover + web-only enhancements ── */
     @media screen {
       .nl-article {
-        box-shadow: 0 1px 0 rgba(31,24,20,.04), 0 30px 80px -40px rgba(60,40,20,.22);
+        box-shadow: 0 1px 0 rgba(43,39,34,.04), 0 30px 80px -40px rgba(43,39,34,.20);
       }
-      .nl-cta:hover { background-color: #B5683A !important; transition: background-color .2s ease; }
+      .nl-cta:hover { background-color: #9A4222 !important; transition: background-color .2s ease; }
       h1, h2 { text-wrap: balance; }
       .nl-footer-td p a { display: inline-block; padding: 10px 0; }
     }
@@ -84,7 +84,7 @@
       .nl-sig-sc    { font-size: 36px !important; }
       .nl-metric-f  { font-size: 36px !important; }
       .nl-metric-u  { font-size: 18px !important; }
-      .nl-m2, .nl-m3 { border-left: 0 !important; border-top: 1px solid rgba(31,24,20,.10) !important; }
+      .nl-m2, .nl-m3 { border-left: 0 !important; border-top: 1px solid rgba(43,39,34,.10) !important; }
       .nl-metrics-t  { display: block !important; width: 100% !important; }
       .nl-metrics-tr { display: block !important; width: 100% !important; }
       .nl-metric-td  { display: block !important; width: 100% !important; box-sizing: border-box !important; padding: 16px 0 !important; text-align: center !important; }
@@ -102,31 +102,31 @@
 <body>
   <div class="preheader">{{PREHEADER}}</div>
 
-  <table role="presentation" width="100%" bgcolor="#EBE2D2">
+  <table role="presentation" width="100%" bgcolor="#F4EFE4">
     <tr>
-      <td align="center" class="outer-wrap" style="padding: 40px 16px; background-color: #EBE2D2;">
+      <td align="center" class="outer-wrap" style="padding: 40px 16px; background-color: #F4EFE4;">
         <!--[if mso]>
         <table role="presentation" width="720" align="center" cellpadding="0" cellspacing="0" border="0">
           <tr><td>
         <![endif]-->
 
-        <table role="presentation" class="nl-article" width="100%" style="max-width: 720px; background-color: #F5EFE6;">
+        <table role="presentation" class="nl-article" width="100%" style="max-width: 720px; background-color: #FCFAF4;">
 
           <!-- ══════════════════════════════════════════ -->
           <!-- 1. MASTHEAD                               -->
           <!-- ══════════════════════════════════════════ -->
           <tr>
-            <td class="nl-pad-x" style="padding: 28px 56px 22px; border-bottom: 1px solid rgba(31,24,20,.10); background-color: #F5EFE6;">
+            <td class="nl-pad-x" style="padding: 28px 56px 22px; border-bottom: 1px solid rgba(43,39,34,.10); background-color: #FCFAF4;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="hide-sm" align="left" width="33%" style="vertical-align: middle;">
-                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .20em; text-transform: uppercase; color: #7A6A58;">ÉDITION &#8470;{{EDITION_NUMBER}}</span>
+                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .20em; text-transform: uppercase; color: #857D72;">ÉDITION &#8470;{{EDITION_NUMBER}}</span>
                   </td>
                   <td align="center" width="34%" style="vertical-align: middle; white-space: nowrap;">
-                    <img src="https://www.charliefinancialadvisor.com/newsletter/charlie-logo.png" width="28" height="28" alt="Charlie" style="width: 28px; height: 28px; display: inline-block; vertical-align: middle;"><span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 24px; color: #1F1814; line-height: 1; vertical-align: middle; margin-left: 10px;">Charlie</span>
+                    <img src="https://www.charliefinancialadvisor.com/newsletter/charlie-logo.png" width="28" height="28" alt="Charlie" style="width: 28px; height: 28px; display: inline-block; vertical-align: middle;"><span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 24px; color: #2B2722; line-height: 1; vertical-align: middle; margin-left: 10px;">Charlie</span>
                   </td>
                   <td class="hide-sm" align="right" width="33%" style="vertical-align: middle;">
-                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .20em; text-transform: uppercase; color: #7A6A58; text-align: right;">{{EDITION_DATE}}</span>
+                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .20em; text-transform: uppercase; color: #857D72; text-align: right;">{{EDITION_DATE}}</span>
                   </td>
                 </tr>
               </table>
@@ -137,16 +137,16 @@
           <!-- 2. TITLE BLOCK                            -->
           <!-- ══════════════════════════════════════════ -->
           <tr>
-            <td class="nl-pad-x nl-title-pt nl-title-pb" style="padding: 72px 56px 48px; text-align: center; background-color: #F5EFE6;">
-              <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: #B5683A; display: block; margin-bottom: 28px;">{{EYEBROW}}</span>
+            <td class="nl-pad-x nl-title-pt nl-title-pb" style="padding: 72px 56px 48px; text-align: center; background-color: #FCFAF4;">
+              <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: #9A4222; display: block; margin-bottom: 28px;">{{EYEBROW}}</span>
 
-              <h1 class="nl-h1" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 46px; line-height: 1.1; letter-spacing: -.015em; color: #1F1814; margin: 0; text-align: center;">
-                {{TITLE_LEAD}} <em style="font-style: italic; color: #B5683A;">{{TITLE_ACCENT}}</em> {{TITLE_TAIL}}
+              <h1 class="nl-h1" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 46px; line-height: 1.1; letter-spacing: -.015em; color: #2B2722; margin: 0; text-align: center;">
+                {{TITLE_LEAD}} <em style="font-style: italic; color: #9A4222;">{{TITLE_ACCENT}}</em> {{TITLE_TAIL}}
               </h1>
 
-              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14.5px; line-height: 1.6; color: #7A6A58; margin: 28px auto 0; max-width: 560px; text-align: center;">
+              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14.5px; line-height: 1.6; color: #857D72; margin: 28px auto 0; max-width: 560px; text-align: center;">
                 <span style="display: block;">{{TAGLINE}}</span>
-                <span style="display: block; margin-top: 10px; font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #B2A593;">{{READTIME}}</span>
+                <span style="display: block; margin-top: 10px; font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #ADA79E;">{{READTIME}}</span>
               </p>
             </td>
           </tr>
@@ -155,7 +155,7 @@
           <!-- 3. HERO IMAGE (720 × 380)                 -->
           <!-- ══════════════════════════════════════════ -->
           <tr>
-            <td style="padding: 0; line-height: 0; font-size: 0; background-color: #EBE2D2;">
+            <td style="padding: 0; line-height: 0; font-size: 0; background-color: #F4EFE4;">
               <img src="{{HERO_URL}}" width="720" alt="{{HERO_ALT}}" style="width: 100%; max-width: 720px; height: auto; display: block;">
             </td>
           </tr>
@@ -164,28 +164,28 @@
           <!-- 4a. SECTION I — LE PROBLÈME               -->
           <!-- ══════════════════════════════════════════ -->
           <tr>
-            <td class="nl-pad-x" style="padding: 72px 56px 0; background-color: #F5EFE6;">
+            <td class="nl-pad-x" style="padding: 72px 56px 0; background-color: #FCFAF4;">
 
               <!-- Section head: numéro · filet · label -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
                 <tr>
                   <td style="width: 1%; white-space: nowrap; vertical-align: baseline; padding-right: 16px;">
-                    <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 32px; line-height: 1; color: #B5683A; letter-spacing: .02em;">I.</span>
+                    <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 32px; line-height: 1; color: #9A4222; letter-spacing: .02em;">I.</span>
                   </td>
                   <td style="vertical-align: middle; padding-right: 16px;">
-                    <div style="height: 1px; background-color: rgba(31,24,20,.10); font-size: 0; line-height: 0;">&nbsp;</div>
+                    <div style="height: 1px; background-color: rgba(43,39,34,.10); font-size: 0; line-height: 0;">&nbsp;</div>
                   </td>
                   <td style="width: 1%; white-space: nowrap; vertical-align: baseline;">
-                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #7A6A58; white-space: nowrap;">Le probl&egrave;me</span>
+                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #857D72; white-space: nowrap;">Le probl&egrave;me</span>
                   </td>
                 </tr>
               </table>
 
-              <h2 class="nl-h2" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 34px; line-height: 1.15; letter-spacing: -.005em; color: #1F1814; margin: 0 0 22px;">{{S1_TITLE}}</h2>
+              <h2 class="nl-h2" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 34px; line-height: 1.15; letter-spacing: -.005em; color: #2B2722; margin: 0 0 22px;">{{S1_TITLE}}</h2>
 
-              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #1F1814; margin: 0 0 18px;">{{S1_LEAD}}</p>
+              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #2B2722; margin: 0 0 18px;">{{S1_LEAD}}</p>
 
-              <p class="nl-dropcap" style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16.5px; line-height: 1.75; color: #1F1814; margin: 0; text-align: justify; hyphens: auto;">{{S1_BODY}}</p>
+              <p class="nl-dropcap" style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16.5px; line-height: 1.75; color: #2B2722; margin: 0; text-align: justify; hyphens: auto;">{{S1_BODY}}</p>
 
             </td>
           </tr>
@@ -194,55 +194,55 @@
           <!-- 4b. SECTION II — LA SOLUTION              -->
           <!-- ══════════════════════════════════════════ -->
           <tr>
-            <td class="nl-pad-x" style="padding: 72px 56px 0; background-color: #F5EFE6;">
+            <td class="nl-pad-x" style="padding: 72px 56px 0; background-color: #FCFAF4;">
 
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
                 <tr>
                   <td style="width: 1%; white-space: nowrap; vertical-align: baseline; padding-right: 16px;">
-                    <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 32px; line-height: 1; color: #B5683A; letter-spacing: .02em;">II.</span>
+                    <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 32px; line-height: 1; color: #9A4222; letter-spacing: .02em;">II.</span>
                   </td>
                   <td style="vertical-align: middle; padding-right: 16px;">
-                    <div style="height: 1px; background-color: rgba(31,24,20,.10); font-size: 0; line-height: 0;">&nbsp;</div>
+                    <div style="height: 1px; background-color: rgba(43,39,34,.10); font-size: 0; line-height: 0;">&nbsp;</div>
                   </td>
                   <td style="width: 1%; white-space: nowrap; vertical-align: baseline;">
-                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #7A6A58; white-space: nowrap;">La solution</span>
+                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #857D72; white-space: nowrap;">La solution</span>
                   </td>
                 </tr>
               </table>
 
-              <h2 class="nl-h2" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 34px; line-height: 1.15; letter-spacing: -.005em; color: #1F1814; margin: 0 0 22px;">{{S2_TITLE}}</h2>
+              <h2 class="nl-h2" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 34px; line-height: 1.15; letter-spacing: -.005em; color: #2B2722; margin: 0 0 22px;">{{S2_TITLE}}</h2>
 
-              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #1F1814; margin: 0 0 18px;">{{S2_LEAD}}</p>
+              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #2B2722; margin: 0 0 18px;">{{S2_LEAD}}</p>
 
-              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16.5px; line-height: 1.75; color: #1F1814; margin: 0; text-align: justify; hyphens: auto;">{{S2_BODY}}</p>
+              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16.5px; line-height: 1.75; color: #2B2722; margin: 0; text-align: justify; hyphens: auto;">{{S2_BODY}}</p>
 
               <!-- Metrics (résultats concrets) -->
-              <table role="presentation" class="nl-metrics-t" width="100%" cellpadding="0" cellspacing="0" style="margin-top: 36px; border-top: 1px solid rgba(31,24,20,.10); border-bottom: 1px solid rgba(31,24,20,.10);">
+              <table role="presentation" class="nl-metrics-t" width="100%" cellpadding="0" cellspacing="0" style="margin-top: 36px; border-top: 1px solid rgba(43,39,34,.10); border-bottom: 1px solid rgba(43,39,34,.10);">
                 <tr class="nl-metrics-tr">
                   <td class="nl-metric-td" align="center" width="33%" style="padding: 28px 8px; text-align: center; vertical-align: top;">
-                    <div style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 46px; line-height: 1; letter-spacing: -.02em; color: #1F1814; white-space: nowrap;"><span class="nl-metric-f">{{S3_M1_VAL}}</span><span class="nl-metric-u" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 22px; color: #B5683A; vertical-align: baseline;">{{S3_M1_UNIT}}</span></div>
-                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #7A6A58; line-height: 1.4; margin-top: 10px; display: block;">{{S3_M1_LABEL}}</span>
+                    <div style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 46px; line-height: 1; letter-spacing: -.02em; color: #2B2722; white-space: nowrap;"><span class="nl-metric-f">{{S3_M1_VAL}}</span><span class="nl-metric-u" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 22px; color: #9A4222; vertical-align: baseline;">{{S3_M1_UNIT}}</span></div>
+                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #857D72; line-height: 1.4; margin-top: 10px; display: block;">{{S3_M1_LABEL}}</span>
                   </td>
-                  <td class="nl-metric-td nl-m2" align="center" width="34%" style="padding: 28px 8px; text-align: center; vertical-align: top; border-left: 1px solid rgba(31,24,20,.10);">
-                    <div style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 46px; line-height: 1; letter-spacing: -.02em; color: #1F1814; white-space: nowrap;"><span class="nl-metric-f">{{S3_M2_VAL}}</span><span class="nl-metric-u" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 22px; color: #B5683A; vertical-align: baseline;">{{S3_M2_UNIT}}</span></div>
-                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #7A6A58; line-height: 1.4; margin-top: 10px; display: block;">{{S3_M2_LABEL}}</span>
+                  <td class="nl-metric-td nl-m2" align="center" width="34%" style="padding: 28px 8px; text-align: center; vertical-align: top; border-left: 1px solid rgba(43,39,34,.10);">
+                    <div style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 46px; line-height: 1; letter-spacing: -.02em; color: #2B2722; white-space: nowrap;"><span class="nl-metric-f">{{S3_M2_VAL}}</span><span class="nl-metric-u" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 22px; color: #9A4222; vertical-align: baseline;">{{S3_M2_UNIT}}</span></div>
+                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #857D72; line-height: 1.4; margin-top: 10px; display: block;">{{S3_M2_LABEL}}</span>
                   </td>
-                  <td class="nl-metric-td nl-m3" align="center" width="33%" style="padding: 28px 8px; text-align: center; vertical-align: top; border-left: 1px solid rgba(31,24,20,.10);">
-                    <div style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 46px; line-height: 1; letter-spacing: -.02em; color: #1F1814; white-space: nowrap;"><span class="nl-metric-f">{{S3_M3_VAL}}</span><span class="nl-metric-u" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 22px; color: #B5683A; vertical-align: baseline;">{{S3_M3_UNIT}}</span></div>
-                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #7A6A58; line-height: 1.4; margin-top: 10px; display: block;">{{S3_M3_LABEL}}</span>
+                  <td class="nl-metric-td nl-m3" align="center" width="33%" style="padding: 28px 8px; text-align: center; vertical-align: top; border-left: 1px solid rgba(43,39,34,.10);">
+                    <div style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 46px; line-height: 1; letter-spacing: -.02em; color: #2B2722; white-space: nowrap;"><span class="nl-metric-f">{{S3_M3_VAL}}</span><span class="nl-metric-u" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 22px; color: #9A4222; vertical-align: baseline;">{{S3_M3_UNIT}}</span></div>
+                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #857D72; line-height: 1.4; margin-top: 10px; display: block;">{{S3_M3_LABEL}}</span>
                   </td>
                 </tr>
               </table>
 
               <!-- Pull quote -->
               <blockquote style="margin: 36px 0 0; padding: 0; text-align: center;">
-                <p style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.35; color: #1F1814; margin: 0 auto; max-width: 520px; text-align: center;">
-                  <span style="color: #B5683A; margin-right: 4px;">&ldquo;</span>{{S3_QUOTE}}<span style="color: #B5683A; margin-left: 4px;">&rdquo;</span>
+                <p style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 400; font-size: 26px; line-height: 1.35; color: #2B2722; margin: 0 auto; max-width: 520px; text-align: center;">
+                  <span style="color: #9A4222; margin-right: 4px;">&ldquo;</span>{{S3_QUOTE}}<span style="color: #9A4222; margin-left: 4px;">&rdquo;</span>
                 </p>
                 <p style="margin: 18px 0 0; text-align: center;">
-                  <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 15px; color: #1F1814;">{{S3_QUOTE_AUTHOR}}</span>
-                  <span style="margin: 0 8px; color: #B2A593;">&#183;</span>
-                  <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; letter-spacing: .06em; font-size: 11px; color: #7A6A58; text-transform: uppercase;">{{S3_QUOTE_ROLE}}</span>
+                  <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 15px; color: #2B2722;">{{S3_QUOTE_AUTHOR}}</span>
+                  <span style="margin: 0 8px; color: #ADA79E;">&#183;</span>
+                  <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; letter-spacing: .06em; font-size: 11px; color: #857D72; text-transform: uppercase;">{{S3_QUOTE_ROLE}}</span>
                 </p>
               </blockquote>
 
@@ -253,41 +253,41 @@
           <!-- 4c. SECTION III — SUR LE TERRAIN          -->
           <!-- ══════════════════════════════════════════ -->
           <tr>
-            <td class="nl-pad-x" style="padding: 72px 56px 0; background-color: #F5EFE6;">
+            <td class="nl-pad-x" style="padding: 72px 56px 0; background-color: #FCFAF4;">
 
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
                 <tr>
                   <td style="width: 1%; white-space: nowrap; vertical-align: baseline; padding-right: 16px;">
-                    <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 32px; line-height: 1; color: #B5683A; letter-spacing: .02em;">III.</span>
+                    <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 32px; line-height: 1; color: #9A4222; letter-spacing: .02em;">III.</span>
                   </td>
                   <td style="vertical-align: middle; padding-right: 16px;">
-                    <div style="height: 1px; background-color: rgba(31,24,20,.10); font-size: 0; line-height: 0;">&nbsp;</div>
+                    <div style="height: 1px; background-color: rgba(43,39,34,.10); font-size: 0; line-height: 0;">&nbsp;</div>
                   </td>
                   <td style="width: 1%; white-space: nowrap; vertical-align: baseline;">
-                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #7A6A58; white-space: nowrap;">Sur le terrain</span>
+                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #857D72; white-space: nowrap;">Sur le terrain</span>
                   </td>
                 </tr>
               </table>
 
-              <h2 class="nl-h2" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 34px; line-height: 1.15; letter-spacing: -.005em; color: #1F1814; margin: 0 0 22px;">{{S3_TITLE}}</h2>
+              <h2 class="nl-h2" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 34px; line-height: 1.15; letter-spacing: -.005em; color: #2B2722; margin: 0 0 22px;">{{S3_TITLE}}</h2>
 
-              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #1F1814; margin: 0 0 18px;">{{S3_LEAD}}</p>
+              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #2B2722; margin: 0 0 18px;">{{S3_LEAD}}</p>
 
-              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16.5px; line-height: 1.75; color: #1F1814; margin: 0; text-align: justify; hyphens: auto;">{{S3_BODY}}</p>
+              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16.5px; line-height: 1.75; color: #2B2722; margin: 0; text-align: justify; hyphens: auto;">{{S3_BODY}}</p>
 
               <!-- Bullets pratiques -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top: 28px;">
-                <tr style="border-top: 1px solid rgba(31,24,20,.06);">
-                  <td style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .08em; color: #B5683A; padding: 14px 16px 14px 0; width: 28px; white-space: nowrap; vertical-align: top;">01</td>
-                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 15.5px; line-height: 1.6; color: #1F1814; padding: 14px 0; vertical-align: top;">{{S3_B1}}</td>
+                <tr style="border-top: 1px solid rgba(43,39,34,.06);">
+                  <td style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .08em; color: #9A4222; padding: 14px 16px 14px 0; width: 28px; white-space: nowrap; vertical-align: top;">01</td>
+                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 15.5px; line-height: 1.6; color: #2B2722; padding: 14px 0; vertical-align: top;">{{S3_B1}}</td>
                 </tr>
-                <tr style="border-top: 1px solid rgba(31,24,20,.06);">
-                  <td style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .08em; color: #B5683A; padding: 14px 16px 14px 0; width: 28px; white-space: nowrap; vertical-align: top;">02</td>
-                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 15.5px; line-height: 1.6; color: #1F1814; padding: 14px 0; vertical-align: top;">{{S3_B2}}</td>
+                <tr style="border-top: 1px solid rgba(43,39,34,.06);">
+                  <td style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .08em; color: #9A4222; padding: 14px 16px 14px 0; width: 28px; white-space: nowrap; vertical-align: top;">02</td>
+                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 15.5px; line-height: 1.6; color: #2B2722; padding: 14px 0; vertical-align: top;">{{S3_B2}}</td>
                 </tr>
-                <tr style="border-top: 1px solid rgba(31,24,20,.06);">
-                  <td style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .08em; color: #B5683A; padding: 14px 16px 14px 0; width: 28px; white-space: nowrap; vertical-align: top;">03</td>
-                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 15.5px; line-height: 1.6; color: #1F1814; padding: 14px 0; vertical-align: top;">{{S3_B3}}</td>
+                <tr style="border-top: 1px solid rgba(43,39,34,.06);">
+                  <td style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .08em; color: #9A4222; padding: 14px 16px 14px 0; width: 28px; white-space: nowrap; vertical-align: top;">03</td>
+                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 15.5px; line-height: 1.6; color: #2B2722; padding: 14px 0; vertical-align: top;">{{S3_B3}}</td>
                 </tr>
               </table>
 
@@ -298,43 +298,43 @@
           <!-- 4d. SECTION IV — PASSEZ À L'ACTION        -->
           <!-- ══════════════════════════════════════════ -->
           <tr>
-            <td class="nl-pad-x" style="padding: 72px 56px 24px; background-color: #F5EFE6;">
+            <td class="nl-pad-x" style="padding: 72px 56px 24px; background-color: #FCFAF4;">
 
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
                 <tr>
                   <td style="width: 1%; white-space: nowrap; vertical-align: baseline; padding-right: 16px;">
-                    <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 32px; line-height: 1; color: #B5683A; letter-spacing: .02em;">IV.</span>
+                    <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 32px; line-height: 1; color: #9A4222; letter-spacing: .02em;">IV.</span>
                   </td>
                   <td style="vertical-align: middle; padding-right: 16px;">
-                    <div style="height: 1px; background-color: rgba(31,24,20,.10); font-size: 0; line-height: 0;">&nbsp;</div>
+                    <div style="height: 1px; background-color: rgba(43,39,34,.10); font-size: 0; line-height: 0;">&nbsp;</div>
                   </td>
                   <td style="width: 1%; white-space: nowrap; vertical-align: baseline;">
-                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #7A6A58; white-space: nowrap;">Passez &agrave; l&rsquo;action</span>
+                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #857D72; white-space: nowrap;">Passez &agrave; l&rsquo;action</span>
                   </td>
                 </tr>
               </table>
 
-              <h2 class="nl-h2" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 34px; line-height: 1.15; letter-spacing: -.005em; color: #1F1814; margin: 0 0 22px;">{{S4_TITLE}}</h2>
+              <h2 class="nl-h2" style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 34px; line-height: 1.15; letter-spacing: -.005em; color: #2B2722; margin: 0 0 22px;">{{S4_TITLE}}</h2>
 
-              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #1F1814; margin: 0 0 28px;">{{S4_LEAD}}</p>
+              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #2B2722; margin: 0 0 28px;">{{S4_LEAD}}</p>
 
               <!-- Steps — supprimer les lignes inutilisées si < 4 étapes -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 40px;">
-                <tr style="border-top: 1px solid rgba(31,24,20,.06);">
-                  <td style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 26px; line-height: 1; color: #B5683A; padding: 20px 4px 20px 0; width: 56px; vertical-align: top; white-space: nowrap;">01</td>
-                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #1F1814; padding: 24px 0 20px; vertical-align: top;">{{S4_STEP_1}}</td>
+                <tr style="border-top: 1px solid rgba(43,39,34,.06);">
+                  <td style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 26px; line-height: 1; color: #9A4222; padding: 20px 4px 20px 0; width: 56px; vertical-align: top; white-space: nowrap;">01</td>
+                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #2B2722; padding: 24px 0 20px; vertical-align: top;">{{S4_STEP_1}}</td>
                 </tr>
-                <tr style="border-top: 1px solid rgba(31,24,20,.06);">
-                  <td style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 26px; line-height: 1; color: #B5683A; padding: 20px 4px 20px 0; width: 56px; vertical-align: top; white-space: nowrap;">02</td>
-                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #1F1814; padding: 24px 0 20px; vertical-align: top;">{{S4_STEP_2}}</td>
+                <tr style="border-top: 1px solid rgba(43,39,34,.06);">
+                  <td style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 26px; line-height: 1; color: #9A4222; padding: 20px 4px 20px 0; width: 56px; vertical-align: top; white-space: nowrap;">02</td>
+                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #2B2722; padding: 24px 0 20px; vertical-align: top;">{{S4_STEP_2}}</td>
                 </tr>
-                <tr style="border-top: 1px solid rgba(31,24,20,.06);">
-                  <td style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 26px; line-height: 1; color: #B5683A; padding: 20px 4px 20px 0; width: 56px; vertical-align: top; white-space: nowrap;">03</td>
-                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #1F1814; padding: 24px 0 20px; vertical-align: top;">{{S4_STEP_3}}</td>
+                <tr style="border-top: 1px solid rgba(43,39,34,.06);">
+                  <td style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 26px; line-height: 1; color: #9A4222; padding: 20px 4px 20px 0; width: 56px; vertical-align: top; white-space: nowrap;">03</td>
+                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #2B2722; padding: 24px 0 20px; vertical-align: top;">{{S4_STEP_3}}</td>
                 </tr>
-                <tr style="border-top: 1px solid rgba(31,24,20,.06);">
-                  <td style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 26px; line-height: 1; color: #B5683A; padding: 20px 4px 20px 0; width: 56px; vertical-align: top; white-space: nowrap;">04</td>
-                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #1F1814; padding: 24px 0 20px; vertical-align: top;">{{S4_STEP_4}}</td>
+                <tr style="border-top: 1px solid rgba(43,39,34,.06);">
+                  <td style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 26px; line-height: 1; color: #9A4222; padding: 20px 4px 20px 0; width: 56px; vertical-align: top; white-space: nowrap;">04</td>
+                  <td style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #2B2722; padding: 24px 0 20px; vertical-align: top;">{{S4_STEP_4}}</td>
                 </tr>
               </table>
 
@@ -348,23 +348,23 @@
 
           <!-- Spacer 40px (fond paper) -->
           <tr>
-            <td style="height: 40px; background-color: #F5EFE6; font-size: 0; line-height: 0; padding: 0;">&nbsp;</td>
+            <td style="height: 40px; background-color: #FCFAF4; font-size: 0; line-height: 0; padding: 0;">&nbsp;</td>
           </tr>
 
           <!-- Card tool -->
           <tr>
-            <td style="background-color: #EBE2D2; border-top: 1px solid rgba(31,24,20,.10); padding: 0;">
+            <td style="background-color: #F4EFE4; border-top: 1px solid rgba(43,39,34,.10); padding: 0;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="nl-tool-mark-td" style="padding: 28px 0 28px 56px; width: 56px; min-width: 56px; vertical-align: top;">
                     <img src="{{TOOL_LOGO_URL}}" width="56" height="56" alt="{{TOOL_NAME}}" style="width: 56px; height: 56px; display: block; border-radius: 8px; object-fit: cover;">
                   </td>
                   <td class="nl-tool-text-td" style="padding: 28px 56px 28px 22px; vertical-align: top;">
-                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #B5683A; display: block; margin-bottom: 8px;">Outil de la semaine</span>
+                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #9A4222; display: block; margin-bottom: 8px;">Outil de la semaine</span>
                     <p style="margin: 0 0 8px; line-height: 1.2;">
-                      <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 24px; color: #1F1814; line-height: 1; vertical-align: baseline;">{{TOOL_NAME}}</span><a href="{{TOOL_LINK_URL}}" style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .06em; color: #7A6A58; text-decoration: none; margin-left: 12px; vertical-align: baseline;">{{TOOL_LINK_TEXT}}</a>
+                      <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 24px; color: #2B2722; line-height: 1; vertical-align: baseline;">{{TOOL_NAME}}</span><a href="{{TOOL_LINK_URL}}" style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 11px; letter-spacing: .06em; color: #857D72; text-decoration: none; margin-left: 12px; vertical-align: baseline;">{{TOOL_LINK_TEXT}}</a>
                     </p>
-                    <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14.5px; line-height: 1.6; color: #7A6A58; margin: 0;">{{TOOL_PITCH}}</p>
+                    <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14.5px; line-height: 1.6; color: #857D72; margin: 0;">{{TOOL_PITCH}}</p>
                   </td>
                 </tr>
               </table>
@@ -373,25 +373,25 @@
 
           <!-- CTA outil de la semaine -->
           <tr>
-            <td style="background-color: #EBE2D2; padding: 28px 56px 40px; text-align: center;">
-              <a class="nl-cta-a" href="{{CTA_URL}}" style="display: inline-block; background-color: #1F1814; color: #F5EFE6 !important; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 500; letter-spacing: .02em; text-decoration: none; padding: 18px 32px; line-height: 1;">
-                {{CTA_TEXT}}<span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 18px; color: #B5683A; margin-left: 14px;">&#8594;</span>
+            <td style="background-color: #F4EFE4; padding: 28px 56px 40px; text-align: center;">
+              <a class="nl-cta-a" href="{{CTA_URL}}" style="display: inline-block; background-color: #2B2722; color: #FCFAF4 !important; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 500; letter-spacing: .02em; text-decoration: none; padding: 18px 32px; line-height: 1;">
+                {{CTA_TEXT}}<span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 18px; color: #9A4222; margin-left: 14px;">&#8594;</span>
               </a>
             </td>
           </tr>
 
           <!-- Spacer 48px (fond paper) -->
           <tr>
-            <td style="height: 48px; background-color: #F5EFE6; font-size: 0; line-height: 0; padding: 0;">&nbsp;</td>
+            <td style="height: 48px; background-color: #FCFAF4; font-size: 0; line-height: 0; padding: 0;">&nbsp;</td>
           </tr>
 
           <!-- ══════════════════════════════════════════ -->
           <!-- 6. SIGNATURE                              -->
           <!-- ══════════════════════════════════════════ -->
           <tr>
-            <td class="nl-pad-x" style="padding: 0 56px 56px; text-align: center; background-color: #F5EFE6;">
-              <span class="nl-sig-sc" style="font-family: 'Homemade Apple', 'Caveat', Georgia, cursive; font-size: 44px; line-height: 1; color: #1F1814; display: block; text-align: center; margin-bottom: 8px;">Charlie</span>
-              <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #7A6A58; display: block; text-align: center;">L&rsquo;&Eacute;QUIPE CHARLIE</span>
+            <td class="nl-pad-x" style="padding: 0 56px 56px; text-align: center; background-color: #FCFAF4;">
+              <span class="nl-sig-sc" style="font-family: 'Homemade Apple', 'Caveat', Georgia, cursive; font-size: 44px; line-height: 1; color: #2B2722; display: block; text-align: center; margin-bottom: 8px;">Charlie</span>
+              <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #857D72; display: block; text-align: center;">L&rsquo;&Eacute;QUIPE CHARLIE</span>
             </td>
           </tr>
 
@@ -399,7 +399,7 @@
           <!-- 7. FOOTER — Mathis + mentions légales     -->
           <!-- ══════════════════════════════════════════ -->
           <tr>
-            <td class="nl-pad-x nl-footer-td" style="padding: 28px 56px 36px; background-color: #EBE2D2; border-top: 1px solid rgba(31,24,20,.10);">
+            <td class="nl-pad-x nl-footer-td" style="padding: 28px 56px 36px; background-color: #F4EFE4; border-top: 1px solid rgba(43,39,34,.10);">
 
               <!-- Auteur -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 14px;">
@@ -408,16 +408,16 @@
                     <img src="https://www.charliefinancialadvisor.com/newsletter/mathis-baala.jpg" width="44" height="44" alt="Mathis Baala" style="width: 44px; height: 44px; border-radius: 22px; display: block; object-fit: cover;">
                   </td>
                   <td style="vertical-align: middle;">
-                    <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 16px; color: #1F1814; line-height: 1.2; display: block;">Mathis Baala</span>
-                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #7A6A58; display: block; margin-top: 2px;">CEO &amp; Co-Founder &middot; Charlie</span>
+                    <span style="font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; font-size: 16px; color: #2B2722; line-height: 1.2; display: block;">Mathis Baala</span>
+                    <span style="font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #857D72; display: block; margin-top: 2px;">CEO &amp; Co-Founder &middot; Charlie</span>
                   </td>
                 </tr>
               </table>
 
               <!-- Mentions légales -->
-              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 1.8; color: #B2A593; margin: 0;">
+              <p style="font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 1.8; color: #ADA79E; margin: 0;">
                 Vous recevez cet email car vous &ecirc;tes inscrit(e) &agrave; la newsletter de Charlie.<br>
-                <a href="{{UNSUBSCRIBE_URL}}" style="color: #B2A593 !important; text-decoration: underline;">Se d&eacute;sabonner</a><span style="margin: 0 6px; color: #D4C9B8;">&#183;</span><a href="{{WEBVIEW_URL}}" style="color: #B2A593 !important; text-decoration: underline;">Voir dans le navigateur</a><span style="margin: 0 6px; color: #D4C9B8;">&#183;</span><a href="https://www.charliefinancialadvisor.com" style="color: #B2A593 !important; text-decoration: underline;">charliefinancialadvisor.com</a>
+                <a href="{{UNSUBSCRIBE_URL}}" style="color: #ADA79E !important; text-decoration: underline;">Se d&eacute;sabonner</a><span style="margin: 0 6px; color: #E2DACB;">&#183;</span><a href="{{WEBVIEW_URL}}" style="color: #ADA79E !important; text-decoration: underline;">Voir dans le navigateur</a><span style="margin: 0 6px; color: #E2DACB;">&#183;</span><a href="https://www.charliefinancialadvisor.com" style="color: #ADA79E !important; text-decoration: underline;">charliefinancialadvisor.com</a>
               </p>
 
             </td>
