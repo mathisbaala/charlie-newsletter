@@ -1,0 +1,5 @@
+project_id = "omowryysuqejtmfhwmmf"
+
+# Page de désabonnement publique : pas de JWT requis (lien cliqué depuis un email).
+[functions.unsubscribe]
+verify_jwt = false

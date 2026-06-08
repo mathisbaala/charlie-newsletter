@@ -1,0 +1,61 @@
+{
+  "SUBJECT": "RGPD : votre cabinet tiendrait-il un contrôle CNIL ?",
+  "CAMPAIGN": "charlie_2026_06_08_editorial_02_rgpd_conformite",
+  "PREHEADER": "Les grands principes, les durées à connaître, et une action concrète à faire ce matin.",
+  "META_TITLE": "Charlie · Intelligence Patrimoine №5 · Conformité RGPD",
+
+  "EDITION_NUMBER": "5",
+  "EDITION_DATE": "LUNDI 8 JUIN 2026",
+
+  "EYEBROW": "La newsletter de la semaine",
+  "TITLE_LEAD": "Mettre votre cabinet en",
+  "TITLE_ACCENT": "conformité",
+  "TITLE_TAIL": "RGPD.",
+  "TAGLINE": "Chaque lundi, l'intelligence artificielle appliquée au métier de CGP.",
+  "READTIME": "5 min de lecture",
+
+  "HERO_URL": "hero-42.jpg",
+  "HERO_ALT": "Illustration éditoriale : conformité RGPD du cabinet de gestion de patrimoine",
+
+  "S1_TITLE": "« Le RGPD, c'est pour les grands groupes. » C'est faux.",
+  "S1_LEAD": "Patrimoine, revenus, situation familiale, pièces d'identité, dossier KYC. Un cabinet de gestion de patrimoine brasse, tous les jours, des données parmi les plus sensibles qui soient.",
+  "S1_BODY": "La taille du cabinet n'y change rien. En 2025, la CNIL a infligé 486,8 M€ d'amendes, près de neuf fois plus qu'en 2024. Ces montants records visent les géants du numérique, pas vous. Mais regardez ce qui sanctionne vraiment les petites structures : les manquements les plus fréquents ne sont pas des fuites spectaculaires, ce sont le défaut de coopération avec la CNIL et le non-respect d'une demande d'accès ou d'effacement. Autrement dit : un client qui réclame ses données, ou un contrôleur qui pose une question — et un cabinet incapable de répondre. Ce jour-là, ne pas avoir de registre, de durées de conservation écrites ni de contrat avec son CRM, ça ne se rattrape pas.",
+
+  "S2_TITLE": "Sept principes, et surtout : pouvoir le prouver.",
+  "S2_LEAD": "Le règlement repose sur sept principes : licéité, finalité, minimisation, exactitude, conservation limitée, sécurité, responsabilité.",
+  "S2_BODY": "Les six premiers tiennent en une phrase : ne collectez que ce qui sert un objectif précis, gardez-le le temps nécessaire, protégez-le. Le septième, la responsabilité, est le plus exigeant : respecter les règles ne suffit pas, il faut pouvoir le <strong>prouver</strong>. Vos preuves, concrètement, ce sont votre registre, vos contrats de sous-traitance, votre politique de confidentialité et vos durées de conservation écrites. Côté base légale, un cabinet en combine quatre : le <strong>contrat</strong> pour la mission de conseil, l'<strong>obligation légale</strong> pour le KYC et la lutte anti-blanchiment, l'<strong>intérêt légitime</strong> pour le suivi client, et le <strong>consentement</strong> pour la prospection.",
+  "S3_M1_VAL": "5",
+  "S3_M1_UNIT": " ans",
+  "S3_M1_LABEL": "données KYC et LCB-FT",
+  "S3_M2_VAL": "3",
+  "S3_M2_UNIT": " ans",
+  "S3_M2_LABEL": "prospect sans réponse",
+  "S3_M3_VAL": "10",
+  "S3_M3_UNIT": " ans",
+  "S3_M3_LABEL": "pièces comptables",
+  "S3_QUOTE": "Le jour où un client a demandé l'accès à toutes ses données, j'ai sorti mon registre et répondu en vingt minutes. Avant, ça m'aurait pris la semaine.",
+  "S3_QUOTE_AUTHOR": "Thomas",
+  "S3_QUOTE_ROLE": "CGP indépendant",
+
+  "S3_TITLE": "Se mettre en conformité, dans le bon ordre.",
+  "S3_LEAD": "Le gros chantier, si vous voulez être carré une bonne fois pour toutes.",
+  "S3_BODY": "Comptez deux à quatre mois en y allant par étapes, puis une revue une fois par an. Première chose : désigner un référent RGPD en interne (le DPO, lui, n'est pas obligatoire pour un cabinet de votre taille). Ensuite, trois chantiers.",
+  "S3_B1": "<strong>Le registre des traitements.</strong> On se croit souvent dispensé sous 250 salariés. C'est faux dès qu'on gère des clients au quotidien. Prenez le modèle gratuit de la CNIL et listez vos traitements : clients, prospects, RH, LCB-FT, prospection.",
+  "S3_B2": "<strong>Les bases légales et les durées.</strong> Pour chaque traitement, fixez trois choses : une base légale, une durée de conservation, une règle de suppression. Et rappelez-vous qu'un client qui demande l'effacement de ses données ne passe pas avant vos obligations de conservation LCB-FT (5 ans) ou comptables (10 ans).",
+  "S3_B3": "<strong>Les sous-traitants et la sécurité.</strong> Votre CRM, votre hébergeur, vos outils IA sont tous des sous-traitants : il vous faut un contrat conforme à l'article 28, et tout transfert de données hors Union européenne doit être encadré. Pour la sécurité, le minimum : double authentification partout, mots de passe d'au moins 12 caractères, chiffrement, et de quoi signaler une fuite à la CNIL sous 72 heures.",
+
+  "S4_TITLE": "Deux heures ce matin : posez votre charte IA.",
+  "S4_LEAD": "Le petit chantier que vous pouvez boucler avant midi, sur l'IA que vous utilisez déjà.",
+  "S4_STEP_1": "Listez les outils IA déjà utilisés dans le cabinet : ChatGPT, Claude, copilotes intégrés à vos logiciels.",
+  "S4_STEP_2": "Écrivez une règle simple, noir sur blanc : aucune donnée nominative de client dans un outil IA grand public. Les données de vos clients relèvent du secret professionnel — elles n'ont rien à faire dans un outil dont les requêtes peuvent servir à entraîner le modèle.",
+  "S4_STEP_3": "Avant chaque requête, prenez le réflexe d'anonymiser : remplacez les noms, les montants exacts et les numéros de contrat par des variables comme [CLIENT], [MONTANT], [CONTRAT].",
+  "S4_STEP_4": "Pour vos usages réguliers, passez à une offre entreprise : non-réutilisation de vos données, contrat de sous-traitance et hébergement maîtrisé.",
+  "CTA_TEXT": "Télécharger le modèle de registre",
+  "CTA_URL": "https://www.cnil.fr/fr/RGPD-le-registre-des-activites-de-traitement",
+
+  "TOOL_LOGO_URL": "charlie-logo.png",
+  "TOOL_NAME": "Le registre CNIL",
+  "TOOL_LINK_TEXT": "cnil.fr",
+  "TOOL_LINK_URL": "https://www.cnil.fr/fr/RGPD-le-registre-des-activites-de-traitement",
+  "TOOL_PITCH": "Le modèle officiel de registre des traitements, gratuit et prêt à remplir. Des tableurs déjà structurés qui couvrent l'essentiel. Le moyen le plus simple de commencer."
+}

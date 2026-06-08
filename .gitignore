@@ -2,3 +2,12 @@ node_modules/
 .env
 .DS_Store
 .gstack/
+
+# Edge function avec secret de désabonnement figé — NE PAS pousser sur GitHub
+supabase/functions/unsubscribe/index.ts
+# État local du CLI Supabase
+supabase/.temp/
+# Logs et sentinelles d'envoi
+send-*.log
+launchd-*.log
+.sent-*
